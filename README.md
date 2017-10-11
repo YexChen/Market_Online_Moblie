@@ -5,8 +5,8 @@
 
 商城项目概览
 ----
-		飞牛网商城，包括9个主要页面（很有可能往上加）
-		http://m.feiniu.com/?ref=pc2h5%7Cmk_Baidu_KW
+		<a href = "http://m.feiniu.com/?ref=pc2h5%7Cmk_Baidu_KW">飞牛网商城</a>，包括9个主要页面（很有可能往上加）
+
 
 关于git操作
 ----
