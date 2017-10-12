@@ -32,3 +32,24 @@ let oMyLists = oMyListsFather.querySelector("ul").querySelectorAll("li");
 		}
 	}
 }
+
+//设置侧边栏滚动效果
+//设置信号变量
+let startY,moveY;
+let oUl = oMyListsFather.querySelector("ul");
+let oldValue=0;
+
+oMyListsFather.addEventListener("touchstart",function(e){
+	startY = e.targetTouches[0].clientY-oMyListsFather.offsetTop;
+})
+
+oMyListsFather.addEventListener("touchmove",function(e){
+	moveY = e.targetTouches[0].clientY-oMyListsFather.offsetTop-startY;
+	oUl.style.transform = "translate(0px,"+ (oldValue+moveY) +"px)";
+	// console.log("translate(0px,"+ (oldValue+moveY) +"px)");
+
+})
+
+oMyListsFather.addEventListener("touchend",function(e){
+	oldValue = e.changedTouches[0].clientY-oMyListsFather.offsetTop-startY;
+})
