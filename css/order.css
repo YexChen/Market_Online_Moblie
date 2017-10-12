@@ -55,7 +55,7 @@ li{list-style: none;}
 	float: left;
 }
 .order-add-n>p{
-	width: 70%;
+	width: 90%;
 	float: right;
 	height: 40px;
 	overflow: hidden;
@@ -125,6 +125,7 @@ li{list-style: none;}
 	border: 0;
 }
 .order-foot{
+	line-height: 1rem;
 	bottom: 0;
 	position: fixed;
 	width: 100%;
@@ -139,4 +140,21 @@ li{list-style: none;}
 	width: 1.9rem;
 	height: 1rem;
 	background-color: rgb(215,6,59);
+}
+.order-foot>p{
+	margin-left: 7%;
+	float: left;
+	height: 1rem;
+	color: rgb(215,6,59);
+}
+.order-foot>em{
+	float: left;
+	height: 1rem;
+	color: rgb(215,6,59);
+}
+.order-foot i{
+	font-size: .5rem;
+	float: left;
+	height: 1rem;
+	color: rgb(215,6,59);
 }

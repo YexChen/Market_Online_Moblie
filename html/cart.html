@@ -44,7 +44,7 @@
 			<div class="cart-all-btn">
 			结算
 			</div>
-			<i class="pri">0</i><i>¥</i>
+			<div><i class="pri">0</i><i>¥</i></div>
 			<em>总价:</em>
 		</div>
 	</div>
@@ -185,6 +185,14 @@
 					}
 				}
 			}
+	})
+</script>
+<script type="text/javascript">
+	console.log($(".cart-all-btn"))
+	$(".cart-all-btn").on("touchstart",function () {
+		console.log($(".pri")[0].innerHTML)
+		localStorage.total_prices=$(".pri")[0].innerHTML
+		location.href="order.html"
 	})
 </script>
 </html>

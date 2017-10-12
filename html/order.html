@@ -47,6 +47,8 @@
 	</div>
 	<div class="order-foot">
 		<p>应付金额:</p>
+		<em>¥</em>
+		<div><i>299</i></div>
 		<div class="foot-btn">
 			立即支付
 		</div>
@@ -123,6 +125,10 @@
 	</div>
 				`
 			}
+			$(".order-ding").on("touchstart",function () {
+				$(".order-ding").css("color","rgb(51,51,51)")
+				$(this).css("color","rgb(215,6,59)")
+			})
 			$(".order-right").on("touchstart",function () {
 				$(this).parent().remove()
 				$.get("http://h6.duchengjiu.top/shop/api_useraddress.php?status=delete&token="+token,{address_id:$(this).parent()[0].dataset.id},function (retext) {
@@ -130,5 +136,24 @@
 				})
 			})
 		})
+	</script>
+	<script type="text/javascript">
+		$(".foot-btn").on("touchstart",function () {
+			var oding = document.querySelectorAll(".order-ding")
+			for (i=0;i<oding.length;i++) {
+				if (getComputedStyle(oding[i]).color==="rgb(215, 6, 59)") {
+					$.post("http://h6.duchengjiu.top/shop/api_order.php?status=add&debug=1&token="+token,{
+						address_id:oding[i].parentNode.dataset.id,
+						total_prices:localStorage.total_prices
+					},function (retext) {
+						console.log(retext)
+					})
+				}
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		
+		$(".order-foot i")[0].innerHTML=localStorage.total_prices
 	</script>
 </html>
