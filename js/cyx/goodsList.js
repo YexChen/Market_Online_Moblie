@@ -40,16 +40,19 @@ let oUl = oMyListsFather.querySelector("ul");
 let oldValue=0;
 
 oMyListsFather.addEventListener("touchstart",function(e){
+	e.stopPropagation();
 	startY = e.targetTouches[0].clientY-oMyListsFather.offsetTop;
+	// console.log("statY:"+startY);
 })
 
 oMyListsFather.addEventListener("touchmove",function(e){
+	e.stopPropagation();
 	moveY = e.targetTouches[0].clientY-oMyListsFather.offsetTop-startY;
-	oUl.style.transform = "translate(0px,"+ (oldValue+moveY) +"px)";
-	// console.log("translate(0px,"+ (oldValue+moveY) +"px)");
-
+	oMyListsFather.style.transform = "translate(0px,"+ (oldValue+moveY) +"px)";
+	console.log(moveY);
 })
 
 oMyListsFather.addEventListener("touchend",function(e){
-	oldValue = e.changedTouches[0].clientY-oMyListsFather.offsetTop-startY;
+	oldValue = e.changedTouches[0].clientY-oMyListsFather.offsetTop-startY + oldValue;
+	// console.log(oldValue);
 })
