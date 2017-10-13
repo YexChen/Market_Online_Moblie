@@ -12,7 +12,6 @@ body {
 	display: block;
 	width: 3.8rem;
 	height: 4.8rem;
-	/*background-color: red;*/
 }
 .top-back i {
 	position: absolute;
@@ -45,40 +44,41 @@ body {
 	right: 0;
 	width: 7.8rem;
 }
-ul {
-    list-style: none;
-}
-/*ul a{
-    display: block;
-    text-decoration: none;
-    height: 70px;
-    text-align: center;
-    line-height: 0.16rem;
-    color: #2f3e45;
-}*/
-.glyphicon {
-	width: 0.16rem;
-	height: 0.16rem;
-}
 .nav a{
 	line-height: 0.16rem;
 }
-.drop-down a {
-	font-size: 3.6rem;
+ul li {
+	list-style: none;
+}
+.drop-down span {
+	font-size: 1.6rem;
+	top: 15px;
+	left: 55px;
+	color: #333;
+}
+.drop-down-content span {
+	font-size: 1.6rem;
+	top: 0;
+	left: 5px;
+	color: white;
 }
 .drop-down-content{
     padding: 0;
     display: none;
+    margin-top: 28px;
+}
+.drop-down-content li {
     border: #2F3E45 solid 1px;
+    background-color: #333;
 }
 .drop-down-content a {
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	line-height: 3.16rem;
-	border: #2F3E45 solid 1px;
 	box-sizing: border-box;
+	padding-left: 7px;
 }
-.drop-down-content li:hover a{
-    background-color:red;
+.drop-down-content li a:hover{
+    color: white;
 }
 .nav .drop-down:hover .drop-down-content{
     display: block;
@@ -105,21 +105,24 @@ ul {
 	text-decoration: line-through
 }
 .bot-box li{
+	width: 55px;
+	height: 24px;
 	margin-top: 16px;
 	float: left;
 	display: block;
-}
-.glyphicon {
-	width: 50px;
-	height: 24px;
-	margin-bottom: 5px;
 	font-size: large;
-    color: #a5a1a1;
+	margin-bottom: 5px;
+}
+.bot-box span,a {
+	color: #a5a1a1;
+	padding-left: 3px;
 }
 .btn {
-	padding: 12px 34px;
+	padding: 14px 24px;
 	background-color: red;
 }
 .btn:hover {
 	border: none;
+	padding: 14px 24px;
+	background-color: red;
 }

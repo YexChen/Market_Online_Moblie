@@ -11,7 +11,7 @@
 <body>
 	<div class="cart-title">
 		<div class="cart-top">
-			<div class="cart-return">
+			<div class="cart-return" onclick="f1()">
 				<div class="cart-tou">
 					
 				</div>
@@ -44,7 +44,7 @@
 			<div class="cart-all-btn">
 			结算
 			</div>
-			<i>¥299</i>
+			<div><i class="pri">0</i><i>¥</i></div>
 			<em>总价:</em>
 		</div>
 	</div>
@@ -85,38 +85,88 @@
 				<p>${data[i].goods_name}</p>
 				<em>限时实惠</em>
 				<h3>¥${goods_price}</h3>
-				<span class="delet glyphicon glyphicon-trash">
+				<span class="delet glyphicon glyphicon-trash" data-id="${data[i].goods_id}">
 					
 				</span>
 				<div class="p-d">
 					<button class="down" >-</button>
 					<button class="plus" >+</button>
-					<p>1</p>
+					<p class="num">1</p>
 				</div>
 			</div>
 		</li>`
 		}
+		$(".delet").click(function () {
+			$(this).parent().parent().remove()
+			$.post("http://h6.duchengjiu.top/shop/api_cart.php?token="+token,{goods_id:this.dataset.id,number:0},function (retext) {
+				console.log(1)
+			})
+		})
 		$(".cart-select").click(function () {
 			if($(this).css("background-color")==="rgba(0, 0, 0, 0)") {
 				$(this).css("background-color","rgb(215,6,59)")
+				var oselect = document.querySelectorAll(".cart-select")
+				var opri = document.querySelector(".pri")
+				var oh3 = document.querySelectorAll(".cart-goods h3")
+				var oallpri=0;
+				var onum = document.querySelectorAll(".num")
+				for (i=0;i<oselect.length;i++) {
+					if (getComputedStyle(oselect[i]).backgroundColor=="rgb(215, 6, 59)") {
+						oallpri+=parseInt(oh3[i].innerHTML.slice(1,6))*parseInt(onum[i].innerHTML)
+					}
+				}
+				opri.innerHTML=oallpri
 			}else{
 				$(this).css("background-color","rgba(0, 0, 0, 0)")
+				var oselect = document.querySelectorAll(".cart-select")
+				var opri = document.querySelector(".pri")
+				var oh3 = document.querySelectorAll(".cart-goods h3")
+				var oallpri=0;
+				var onum = document.querySelectorAll(".num")
+				for (i=0;i<oselect.length;i++) {
+					if (getComputedStyle(oselect[i]).backgroundColor=="rgb(215, 6, 59)") {
+						oallpri+=parseInt(oh3[i].innerHTML.slice(1,6))*parseInt(onum[i].innerHTML)
+					}
+				}
+				opri.innerHTML=oallpri
 			}
 	})
 		$(".plus").click(function () {
+			var opri = document.querySelector(".pri")
+			var oh3 = document.querySelectorAll(".cart-goods h3")
 			$(this).next()[0].innerHTML=parseInt($(this).next()[0].innerHTML)+1
+			if(getComputedStyle($(this).parent().parent().siblings()[0]).backgroundColor==="rgba(0, 0, 0, 0)"){
+				return;
+			}else{
+				opri.innerText =parseInt(opri.innerText) + parseInt($(this).parent().siblings()[2].innerHTML.slice(1,6))
+			}
 		})
 		$(".down").click(function () {
 			if ($(this).nextAll()[1].innerHTML==1) {
 				return;
 			}
 			$(this).nextAll()[1].innerHTML=parseInt($(this).nextAll()[1].innerHTML)-1
+			var opri = document.querySelector(".pri")
+			var oh3 = document.querySelectorAll(".cart-goods h3")
+			if(getComputedStyle($(this).parent().parent().siblings()[0]).backgroundColor==="rgba(0, 0, 0, 0)"){
+				return;
+			}else{
+				opri.innerText =parseInt(opri.innerText) - parseInt($(this).parent().siblings()[2].innerHTML.slice(1,6))
+			}
 		})
 	})
 </script>
 <script type="text/javascript">
 	$(".cart-select-all").click(function () {
 		if ($(this).css("background-color")==="rgba(0, 0, 0, 0)") {
+			var oh3 = document.querySelectorAll(".cart-goods h3")
+			var onum = document.querySelectorAll(".num")
+			var opri = document.querySelector(".pri")
+			var allpri=0;
+			for (i=0;i<oh3.length;i++) {
+				allpri += parseInt(oh3[i].innerHTML.slice(1,6))*parseInt(onum[i].innerText);
+				opri.innerHTML=allpri;
+			}
 				$(this).css("background-color","rgb(215,6,59)")
 				var oall = document.querySelectorAll(".cart-select")
 				for (i=0;i<oall.length;i++) {
@@ -125,15 +175,46 @@
 					}
 				}
 			}else{
+				var opri = document.querySelector(".pri")
+				opri.innerHTML=0;
 				$(this).css("background-color","rgba(0, 0, 0, 0)")
 				var oall = document.querySelectorAll(".cart-select")
 				for (i=0;i<oall.length;i++) {
-					console.log(getComputedStyle(oall[i]).backgroundColor)
 					if(getComputedStyle(oall[i]).backgroundColor==="rgb(215, 6, 59)"){
 						oall[i].style.backgroundColor="rgba(0, 0, 0, 0)"
 					}
 				}
 			}
 	})
+</script>
+<script type="text/javascript">
+	$(".cart-all-btn").on("touchstart",function () {
+		var p=0;
+		$(".cart-select").each(function () {
+			if ($(this).css("background-color")=="rgb(215, 6, 59)") {
+				p++;
+			}
+		})
+		if (p==0) {
+			alert("至少选择一个商品")
+			return;
+		}
+		$(".cart-select").each(function () {
+			if ($(this).css("background-color")=="rgba(0, 0, 0, 0)") {
+				$.post("http://h6.duchengjiu.top/shop/api_cart.php?token="+token,{
+					goods_id:$(this).next().next().children()[3].dataset.id,
+					number:0
+				},function (retext) {
+					console.log(retext)
+				})
+			}
+		})
+		localStorage.total_prices=$(".pri")[0].innerHTML
+		location.href="order.html"
+	})
+	function f1()
+ {
+ window.history.back();
+ }
 </script>
 </html>

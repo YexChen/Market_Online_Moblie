@@ -3,12 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-		<title>商品</title>
+		<title>详情</title>
 		<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
 		<link rel="stylesheet" href="../css/goods.css" />
+		<link rel="stylesheet" href="../css/backtotop.css" />
 	</head>
 	<body>
 	<script src="../js/myajax.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/backtotop.js" ></script>
+	
 	<script>
 	    var goods_id = getQueryString('goods_id');
 	    console.log(goods_id);
@@ -29,38 +32,24 @@
 					</div>
 					<div class="w-icon">
 						<ul class="nav">
-				            <li class="drop-down"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
-					            <ul class="drop-down-content">
-					                <li><span class="glyphicon glyphicon-search" aria-hidden="true"></span><a href="#">搜索</a></li>
-					                <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span><a href="#">主页</a></li>
-					                <li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><a href="#">足迹</a></li>
-					            </ul>
+				            <li class="drop-down"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 				            </li>
-					   </ul>
+					   	</ul>
 					</div>
 			  </div>
 			</nav>
 		    <div>
 		        <div class="pic"><img src="${obj.goods_thumb}"></div>
-		        <div><span class="shop">商城</span>${obj.goods_name}</div>
-		        <div class="price"><span>￥</span>${obj.price}</div>
-		        <div class="price2"><span>建议零售价</span>￥${2*obj.price-100}</div>
 	        </div>
-	        <nav class="navbar navbar-default navbar-fixed-bottom">
-				<div class="container">
-				  <ul class="bot-box">
-		        	<li><a href="#"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><p>客服</p></a></li>
-		        	<li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span><p>店铺</p></a></li>
-		        	<li><a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><p>收藏</p></a></li>
-		        	<li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><p>购物车</p></a></li>
-		          </ul>
-		          <button type="button" class="btn btn-default navbar-btn" id="add-to-cart">加入购物车</button>
-				</div>
-			</nav>
-	      </div>
+	        	<a href="javascript:;" class="backtotop" id="abc"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a>
 	      `;
+	      backtotop('#abc', 500, 10000);
 	    });
-	
+	    
+	    
+//	<a href="javascript:;" class="backtotop" id="abc">回到顶部</a>
+//  backtotop('#abc', 500, 10000);
+    
 	    document.body.onclick = function(event) {
 	      event = event || window.event;
 	      var target = event.target || event.srcElement;
