@@ -1,0 +1,77 @@
+/* reset css 重置样式 */
+*,
+::before,
+::after{
+	/*选中所有的元素和伪元素*/
+	margin: 0;
+	padding: 0;
+	/*针对移动端*/
+	box-sizing: border-box;
+	/*为支持低版本的移动端,主流移动端游览器兼容*/
+	-webkit-box-sizing: border-box;
+	/*移动端点击高亮效果清除*/
+	-webkit-tap-highlight-color: transparent;
+}
+body{
+	font-size: 14px;
+	color: #333;
+	/*设置字体微软雅黑,如果没有就使用sans-serif,如果没有使用默认的*/
+	font-family: "microsoft yahei", sans-serif;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+body a:focus, body a:hover{
+	text-decoration: none;
+}
+input,textarea{
+	outline: none;
+	border: none;
+	/*禁止用户缩放窗口*/
+	resize: none;
+	/*清除移动端输入框特有的样式*/
+	-webkit-appearance: none;
+}
+
+/* common css 公共样式 */
+.f_left{
+	float: left;
+}
+.f_right{
+	float: right;
+}
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after{
+	content: "";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+	clear: both;
+}
+.clearfix {
+	margin-bottom: 0;
+}
+.clearh3 {
+	font-size: 20px;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1.6;
+}
+.m_l10{
+	margin-left: 10px;
+}
+.m_r10{
+	margin-right: 10px;
+}
+/*精灵图*/
+/* class="icon_xxx" class="red icon_xxx"*/
+/*[class^="icon_"],[class*=" icon_"]{
+	background: url("../images/jd-sprites.png") no-repeat;
+	background-size: 200px 200px;
+}*/
