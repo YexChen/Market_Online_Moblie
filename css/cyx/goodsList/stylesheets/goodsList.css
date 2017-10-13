@@ -10,34 +10,39 @@ html {
 }
 
 /* line 16, ../sass/goodsList.sass */
+.app {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* line 20, ../sass/goodsList.sass */
 .myNavbar {
   height: 3.91667rem;
   background-color: white;
   box-sizing: border-box;
 }
-/* line 20, ../sass/goodsList.sass */
+/* line 24, ../sass/goodsList.sass */
 .myNavbar .back {
   display: inline-block;
   width: 3.33333rem;
   height: 3.33333rem;
 }
-/* line 24, ../sass/goodsList.sass */
-.myNavbar .back span {
+/* line 28, ../sass/goodsList.sass */
+.myNavbar .back img {
   display: inline-block;
   width: 100%;
-  height: 100%;
   font-size: 2.8rem;
   font-weight: 500;
   vertical-align: middle;
   padding: 0.3rem 1rem;
 }
-/* line 32, ../sass/goodsList.sass */
+/* line 35, ../sass/goodsList.sass */
 .myNavbar .search {
   position: relative;
   display: inline-block;
   padding: 0.6rem 0;
 }
-/* line 36, ../sass/goodsList.sass */
+/* line 39, ../sass/goodsList.sass */
 .myNavbar .search .glyphicon {
   font-weight: 600;
   position: absolute;
@@ -46,7 +51,7 @@ html {
   top: 1.1rem;
   left: 1rem;
 }
-/* line 43, ../sass/goodsList.sass */
+/* line 46, ../sass/goodsList.sass */
 .myNavbar .search input {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -59,7 +64,7 @@ html {
   text-indent: 2.8rem;
   font-size: 1.4rem;
 }
-/* line 51, ../sass/goodsList.sass */
+/* line 54, ../sass/goodsList.sass */
 .myNavbar .slideDown {
   position: relative;
   display: inline-block;
@@ -67,21 +72,21 @@ html {
   margin: 0.7rem 0.5rem 0rem 0.5rem;
   top: 0.2rem;
 }
-/* line 57, ../sass/goodsList.sass */
+/* line 60, ../sass/goodsList.sass */
 .myNavbar .slideDown .glyphicon {
   font-weight: 800;
   width: 100%;
   height: 100%;
 }
 
-/* line 63, ../sass/goodsList.sass */
+/* line 66, ../sass/goodsList.sass */
 .sidebar {
   float: left;
   width: 7.08333rem;
   height: 43.41667rem;
   overflow: hidden;
 }
-/* line 69, ../sass/goodsList.sass */
+/* line 72, ../sass/goodsList.sass */
 .sidebar ul li {
   background-color: #F4F4F4;
   border: 1px solid white;
@@ -90,80 +95,88 @@ html {
   text-align: center;
   box-sizing: border-box;
 }
-/* line 76, ../sass/goodsList.sass */
+/* line 79, ../sass/goodsList.sass */
 .sidebar ul li a {
   line-height: 3.66667rem;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 81, ../sass/goodsList.sass */
+/* line 84, ../sass/goodsList.sass */
 .sidebar ul .li-active {
   background-color: white;
   border-left: 4px solid #D7063B;
 }
-/* line 84, ../sass/goodsList.sass */
+/* line 87, ../sass/goodsList.sass */
 .sidebar ul .li-active a {
   color: #D7063B;
 }
 
-/* line 88, ../sass/goodsList.sass */
+/* line 91, ../sass/goodsList.sass */
+.asideWrapper {
+  height: 43.41667rem;
+  width: 7.083rem;
+  float: left;
+  overflow: hidden;
+}
+
+/* line 96, ../sass/goodsList.sass */
 .my-artical {
   float: left;
   width: 17.41667rem;
   margin: 0.83333rem 1rem;
   height: 43.41667rem;
 }
-/* line 93, ../sass/goodsList.sass */
+/* line 101, ../sass/goodsList.sass */
 .my-artical img {
   width: 100%;
   height: 7.5rem;
 }
-/* line 96, ../sass/goodsList.sass */
+/* line 104, ../sass/goodsList.sass */
 .my-artical h6 {
   font-size: 1.4rem;
   text-indent: 1rem;
 }
-/* line 100, ../sass/goodsList.sass */
+/* line 108, ../sass/goodsList.sass */
 .my-artical .goods-items-group .goods-items {
   width: 5.64167rem;
   height: 8.41667rem;
   float: left;
 }
-/* line 104, ../sass/goodsList.sass */
+/* line 112, ../sass/goodsList.sass */
 .my-artical .goods-items-group .goods-items a:hover {
   text-decoration: none;
 }
-/* line 106, ../sass/goodsList.sass */
+/* line 114, ../sass/goodsList.sass */
 .my-artical .goods-items-group .goods-items img {
   width: 5.64167rem;
   height: 5.64167rem;
 }
-/* line 109, ../sass/goodsList.sass */
+/* line 117, ../sass/goodsList.sass */
 .my-artical .goods-items-group .goods-items p {
   text-align: center;
   color: black;
   text-decoration: none;
 }
 
-/* line 115, ../sass/goodsList.sass */
+/* line 123, ../sass/goodsList.sass */
 .slideBy {
   height: 5rem;
   display: block;
   border-bottom: 1px solid #D5D5D5;
   box-sizing: border-box;
 }
-/* line 120, ../sass/goodsList.sass */
+/* line 128, ../sass/goodsList.sass */
 .slideBy ul {
   list-style: none;
 }
-/* line 122, ../sass/goodsList.sass */
+/* line 130, ../sass/goodsList.sass */
 .slideBy ul li {
   width: 6.66667rem;
   height: 4.5rem;
   float: left;
   text-align: center;
 }
-/* line 127, ../sass/goodsList.sass */
+/* line 135, ../sass/goodsList.sass */
 .slideBy ul li i {
   display: inline-block;
   background-image: url("../../../../../images/cyx/pepsi1.png");
@@ -173,28 +186,57 @@ html {
   height: 2rem;
   text-align: center;
 }
-/* line 135, ../sass/goodsList.sass */
+/* line 143, ../sass/goodsList.sass */
 .slideBy ul li .items-no1 {
   background-position: 0rem -1.9rem;
 }
-/* line 137, ../sass/goodsList.sass */
+/* line 145, ../sass/goodsList.sass */
 .slideBy ul li .items-no2 {
   background-position: 0rem -3.75rem;
 }
-/* line 139, ../sass/goodsList.sass */
+/* line 147, ../sass/goodsList.sass */
 .slideBy ul li .items-no3 {
   background-position: 0rem -9.5rem;
 }
-/* line 141, ../sass/goodsList.sass */
+/* line 149, ../sass/goodsList.sass */
 .slideBy ul li .items-no4 {
   background-position: 0rem -13.5rem;
 }
-/* line 143, ../sass/goodsList.sass */
+/* line 151, ../sass/goodsList.sass */
 .slideBy ul li p {
   text-align: center;
 }
 
-/* line 147, ../sass/goodsList.sass */
+/* line 155, ../sass/goodsList.sass */
 .tempBorder {
   border-bottom: 1px solid #D5D5D5;
+}
+
+@media(min-width : 375px) {
+  /* line 161, ../sass/goodsList.sass */
+  html {
+    font-size: 14px !important;
+  }
+}
+@media(min-width : 414px) {
+  /* line 165, ../sass/goodsList.sass */
+  html {
+    font-size: 15.5px !important;
+  }
+}
+@media(min-width : 768px) {
+  /* line 169, ../sass/goodsList.sass */
+  html {
+    font-size: 18px !important;
+    width: 64%;
+    margin: 0 auto;
+  }
+}
+@media(min-width : 1024px) {
+  /* line 175, ../sass/goodsList.sass */
+  html {
+    font-size: 25px !important;
+    width: 70%;
+    margin: 0 auto;
+  }
 }
