@@ -188,9 +188,27 @@
 	})
 </script>
 <script type="text/javascript">
-	console.log($(".cart-all-btn"))
 	$(".cart-all-btn").on("touchstart",function () {
-		console.log($(".pri")[0].innerHTML)
+		var p=0;
+		$(".cart-select").each(function () {
+			if ($(this).css("background-color")=="rgb(215, 6, 59)") {
+				p++;
+			}
+		})
+		if (p==0) {
+			alert("至少选择一个商品")
+			return;
+		}
+		$(".cart-select").each(function () {
+			if ($(this).css("background-color")=="rgba(0, 0, 0, 0)") {
+				$.post("http://h6.duchengjiu.top/shop/api_cart.php?token="+token,{
+					goods_id:$(this).next().next().children()[3].dataset.id,
+					number:0
+				},function (retext) {
+					console.log(retext)
+				})
+			}
+		})
 		localStorage.total_prices=$(".pri")[0].innerHTML
 		location.href="order.html"
 	})
