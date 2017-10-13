@@ -1,0 +1,104 @@
+=border-radius($radius)
+	-webkit-border-radius : $radius
+	-moz-border-radius : $radius
+	-ms-border-radius : $radius
+	border-radius : $radius
+
+// 兼容性代码区完毕
+
+*
+	margin : 0 
+	padding : 0
+
+html
+	font-size : 12px 
+
+.myNavbar
+	height: 3.91666667rem
+	background-color : white
+	box-sizing : border-box
+	border-bottom : 1px solid #D5D5D5
+	.back
+		display : inline-block
+		width: 3.3333333333rem
+		height: 3.333333333rem
+		img
+			display : inline-block
+			width: 100%
+			font-size : 2.8rem
+			font-weight : 500
+			vertical-align : middle
+			padding : 0.3rem 1rem
+	.search
+		position : relative
+		display : inline-block
+		padding : 0.6rem 0 
+		.glyphicon
+			font-weight : 400
+			position : absolute
+			font-size : 1.8rem
+			color : grey
+			top : 1.1rem
+			left : 1rem
+		input
+			+border-radius(2px)
+			border : 0
+			background-color : #E5E5E5
+			width: 19.5rem
+			height: 2.6666666667rem
+			text-indent : 3rem
+			font-size : 1.2rem
+	.slideDown
+		position : relative
+		display : inline-block
+		font-size : 1.33333333rem
+		margin : 0.7rem 0rem 0rem 0.1rem
+		top : 0.2rem
+		label
+			font-weight : 400 
+			display : inline-block
+			vertical-align : middle
+
+section
+	color : grey
+	padding : 0.5rem 1rem
+	font-size : 1.3333333rem
+	vertical-align : middle
+	overflow : hidden
+	.glyphicon-heart
+		top : 0.25rem
+	.m-word
+		font-size : 1.166666666667rem
+		padding-left : 0.6666666666667rem
+
+article
+	padding : 0.5rem 1rem
+	a
+		margin : 0.33333333333rem 0.3333333rem
+		padding : 0.25rem   1.333333333333rem
+		color : black
+		text-decoration : none
+		float : left
+		box-sizing : inline-box
+		border : 1px solid #D5D5D5
+
+// 开始媒体查询之路
+@media(min-width : 375px)
+	html
+		font-size : 14px !important
+
+@media(min-width : 414px)
+	html
+		font-size : 15.5px !important
+
+@media(min-width : 768px)
+	html
+		font-size : 18px !important
+		width : 64%
+		margin : 0 auto
+
+@media(min-width : 1024px)
+	html
+		font-size : 25px !important
+		width : 70%
+		margin : 0 auto
