@@ -48,3 +48,6 @@ http://m.feiniu.com/?ref=pc2h5%7Cmk_Baidu_KW
 		11.用户页面  （李洁）
 		12.用户详情页面 （李洁）
 		13.其他的再添加
+关于token
+----
+		token保存在localstorage里面
