@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<title>详情</title>
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="../css/goods.css" />
+		<link rel="stylesheet" href="../css/backtotop.css" />
+	</head>
+	<body>
+	<script src="../js/myajax.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/backtotop.js" ></script>
+	
+	<script>
+	    var goods_id = getQueryString('goods_id');
+	    console.log(goods_id);
+	    myajax.get('http://h6.duchengjiu.top/shop/api_goods.php', {
+	      // goods_id: goods_id ES5
+	      goods_id //ES6
+	    }, function(err, responseText){
+	      var json = JSON.parse(responseText);
+	      var obj = json.data[0];
+	      console.log(json);
+	      document.body.innerHTML = `
+		    <nav class="navbar navbar-default navbar-fixed-top">
+			  <div class="container">
+					<span class="top-back"><i></i></span>
+					<div class="swich">
+						<a href="goods.html">商品</a>
+						<a href="goods2.html">详情</a>
+					</div>
+					<div class="w-icon">
+						<ul class="nav">
+				            <li class="drop-down"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+				            </li>
+					   	</ul>
+					</div>
+			  </div>
+			</nav>
+		    <div>
+		        <div class="pic"><img src="${obj.goods_thumb}"></div>
+	        </div>
+	        	<a href="javascript:;" class="backtotop" id="abc"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a>
+	      `;
+	      backtotop('#abc', 500, 10000);
+	    });
+	    
+	    
+//	<a href="javascript:;" class="backtotop" id="abc">回到顶部</a>
+//  backtotop('#abc', 500, 10000);
+    
+	    document.body.onclick = function(event) {
+	      event = event || window.event;
+	      var target = event.target || event.srcElement;
+	      if (target.id === 'add-to-cart') {
+	        console.log('添加到购物车');
+	        myajax.post('http://h6.duchengjiu.top/shop/api_cart.php?token='+localStorage.token,
+	        {goods_id, number:1},
+	        function(err, responseText) {
+	          var json = JSON.parse(responseText);
+	          console.log(json);
+	          if (json.code === 0) {
+	            alert('添加到购物车成功');
+	          }
+	        })
+	      }
+	    }
+	</script>
+	</body>
+</html>

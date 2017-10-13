@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: white;
+}
+.top-back {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 3.8rem;
+	height: 4.8rem;
+}
+.top-back i {
+	position: absolute;
+	content: '';
+	left: 40%;
+	top: 25%;
+	width: 1.3rem;
+	height: 1.3rem;
+	border-left: #333 solid 0.24rem;
+	border-bottom: #333 solid 0.24rem;
+	transform: rotate(45deg);
+}
+.swich {
+	position: relative;
+	margin: 0 auto;
+	line-height: 3.84rem;
+	width: 13.16rem;
+	white-space: nowrap;
+}
+.swich a {
+	color: #999;
+	font-size: 1.28rem;
+	width: 5.72rem;
+	text-align: center;
+	display: inline-block;
+}
+.w-icon {
+	position: absolute;
+	top: 2%;
+	right: 0;
+	width: 7.8rem;
+}
+.nav a{
+	line-height: 0.16rem;
+}
+ul li {
+	list-style: none;
+}
+.drop-down span {
+	font-size: 1.6rem;
+	top: 15px;
+	left: 55px;
+	color: #333;
+}
+.drop-down-content span {
+	font-size: 1.6rem;
+	top: 0;
+	left: 5px;
+	color: white;
+}
+.drop-down-content{
+    padding: 0;
+    display: none;
+    margin-top: 28px;
+}
+.drop-down-content li {
+    border: #2F3E45 solid 1px;
+    background-color: #333;
+}
+.drop-down-content a {
+	font-size: 1.8rem;
+	line-height: 3.16rem;
+	box-sizing: border-box;
+	padding-left: 7px;
+}
+.drop-down-content li a:hover{
+    color: white;
+}
+.nav .drop-down:hover .drop-down-content{
+    display: block;
+}
+.pic img {
+	width: 100%;
+	margin-top: 13%;
+}
+.shop {
+	border: #D43F3A solid 1px;
+	padding: 3px;
+	color: #D43F3A;
+	margin-right: 10px;
+}
+.price {
+	content: "\00A5";
+	margin-top: 10px;
+	color: red;
+}
+.price2{
+	margin-top: 10px;
+	font-size: 12px;
+	opacity: 0.7;
+	text-decoration: line-through
+}
+.bot-box li{
+	width: 55px;
+	height: 24px;
+	margin-top: 16px;
+	float: left;
+	display: block;
+	font-size: large;
+	margin-bottom: 5px;
+}
+.bot-box span,a {
+	color: #a5a1a1;
+	padding-left: 3px;
+}
+.btn {
+	padding: 14px 24px;
+	background-color: red;
+}
+.btn:hover {
+	border: none;
+	padding: 14px 24px;
+	background-color: red;
+}

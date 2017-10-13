@@ -333,7 +333,7 @@ var hotgoods = function () {
 				<div>
 					<p class='now_price'>¥<span>${obj.price}</span></p>
 					<p class='old_price'>¥1000</p>
-					<a href="cart.html?goods_id=${obj.goods_id}" class="cart"><img src="images/cart.png"/></a>
+					<a href="cart.html?goods_id=${obj.goods_id}" class="cart"><img src="images/mycart.png"/></a>
 				</div>
 			</li>`;
 		}

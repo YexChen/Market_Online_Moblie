@@ -1,0 +1,212 @@
+=border-radius($radius)
+	-webkit-border-radius : $radius
+	-moz-border-radius : $radius
+	-ms-border-radius : $radius
+	border-radius : $radius
+
+//行数量的minxin
+=line-clamp($lines)
+	line-clamp : $lines
+	-webkit-line-clamp : $lines
+	-webkit-box-orient: vertical
+	display: box
+	display: -webkit-box
+
+// 兼容性代码区完毕
+
+*
+	margin : 0 
+	padding : 0
+
+html
+	font-size : 12px !important
+
+.myNavbar
+	height: 3.91666667rem
+	background-color : white
+	box-sizing : border-box
+	.back
+		display : inline-block
+		width: 3.3333333333rem
+		height: 3.333333333rem
+		img
+			display : inline-block
+			width: 100%
+			font-size : 2.8rem
+			font-weight : 500
+			vertical-align : middle
+			padding : 0.3rem 1rem
+	.search
+		position : relative
+		display : inline-block
+		padding : 0.6rem 0 
+		.glyphicon
+			font-weight : 400
+			position : absolute
+			font-size : 1.8rem
+			color : grey
+			top : 1.1rem
+			left : 1rem
+		input
+			+border-radius(2px)
+			border : 0
+			background-color : #E5E5E5
+			width: 19.5rem
+			height: 2.6666666667rem
+			text-indent : 2.8rem
+			font-size : 1.4rem
+	.slideDown
+		position : relative
+		display : inline-block
+		font-size : 1.666666rem
+		margin : 0.7rem 0.5rem 0rem 0.5rem
+		top : 0.2rem
+		.glyphicon
+			font-weight : 400
+			width: 100%
+			height: 100%
+.slideBy
+	height: 5rem
+	display : block
+	border-bottom : 1px solid #D5D5D5
+	box-sizing : border-box
+	ul
+		list-style : none
+		li
+			width: 6.6666666667rem
+			height: 4.5rem
+			float : left
+			text-align : center
+			i
+				display : inline-block
+				background-image : url("../../../../../images/cyx/pepsi1.png")
+				background-repeat : no-repeat
+				background-size : cover
+				width: 2rem
+				height: 2rem
+				text-align : center
+			.items-no1
+				background-position : 0rem -1.9rem
+			.items-no2
+				background-position : 0rem -3.75rem
+			.items-no3
+				background-position : 0rem -9.5rem
+			.items-no4
+				background-position : 0rem -13.5rem
+			p
+				text-align : center
+
+//临时类名，为了加个边框
+.tempBorder
+	border-bottom : 1px solid #D5D5D5
+
+
+.main-page
+	position :relative
+	.goods-cell
+		height: 10rem
+		background-color: #F8F8F8
+		margin : 2px 0px
+		.item-img
+			width: 10rem
+			height: 10rem
+			float : left
+			img
+				width: 100%
+				height: 100%
+		.item-desc
+			position : relative
+			margin : 0 0 0 1rem
+			padding : 0 0.666666667rem 0 0
+			float : left
+			width: 15.66666667rem
+			height: 100%
+			overflow : hidden
+
+			.p1
+				padding-top : 1rem
+				margin-bottom : 1.5rem
+				+line-clamp(2)
+				overflow : hidden
+				text-overflow : ellipsis
+			.p2
+				span
+					color : #E60012
+			.p3
+				font-size : 0.8rem
+				color : grey
+				box-sizing : border-box
+				border-bottom : 1px solid #E1E1E1
+			p
+				width: 100%
+				word-break:break-all
+				span
+					color : #EA97AA
+					border : 1px solid #E37791
+				em
+					font-style : normal
+					color : #C70034
+					font-size : 1.5rem
+			.chart
+				position : absolute
+				width: 1.6666667rem
+				height: 1.666667rem
+				background : url("../../../../../images/cyx/购物车空.png") no-repeat
+				background-size : 70% 70%
+				background-position : center center
+				bottom : 1rem
+				right : 0.5rem
+				padding : 1.2rem
+				border : 1px solid #E06C89
+				border-radius : 50%
+	.main-page-icon
+		background-color : white
+		position : fixed
+		width: 2.5rem
+		height: 2.5rem
+		border : 1px solid #CECECE
+		border-radius : 50%
+		bottom : 5rem
+		right : 1.5rem
+		text-align : center
+		z-index : 99
+		img
+			width: 70%
+			height: 70%
+	.chart
+		background-color : white
+		z-index : 99
+		position : fixed
+		width: 2.5rem
+		height: 2.5rem
+		border : 1px solid #CECECE
+		border-radius : 50%
+		bottom : 1.8rem
+		right : 1.5rem
+		text-align : center
+		padding : 0.1rem 0 
+		img
+			width: 70%
+			height: 70%
+
+
+// 开始媒体查询之路
+@media(min-width : 375px)
+	html
+		font-size : 14px !important
+
+@media(min-width : 414px)
+	html
+		font-size : 15.5px !important
+
+@media(min-width : 768px)
+	html
+		font-size : 18px !important
+		width : 64%
+		margin : 0 auto
+
+@media(min-width : 1024px)
+	html
+		font-size : 25px !important
+		width : 70%
+		margin : 0 auto

@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/* line 17, ../sass/goodsSearch.sass */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 21, ../sass/goodsSearch.sass */
+html {
+  font-size: 12px;
+}
+
+/* line 24, ../sass/goodsSearch.sass */
+.myNavbar {
+  height: 3.91667rem;
+  background-color: white;
+  box-sizing: border-box;
+  border-bottom: 1px solid #D5D5D5;
+}
+/* line 29, ../sass/goodsSearch.sass */
+.myNavbar .back {
+  display: inline-block;
+  width: 3.33333rem;
+  height: 3.33333rem;
+}
+/* line 33, ../sass/goodsSearch.sass */
+.myNavbar .back img {
+  display: inline-block;
+  width: 100%;
+  font-size: 2.8rem;
+  font-weight: 500;
+  vertical-align: middle;
+  padding: 0.3rem 1rem;
+}
+/* line 40, ../sass/goodsSearch.sass */
+.myNavbar .search {
+  position: relative;
+  display: inline-block;
+  padding: 0.6rem 0;
+}
+/* line 44, ../sass/goodsSearch.sass */
+.myNavbar .search .glyphicon {
+  font-weight: 400;
+  position: absolute;
+  font-size: 1.8rem;
+  color: grey;
+  top: 1.1rem;
+  left: 1rem;
+}
+/* line 51, ../sass/goodsSearch.sass */
+.myNavbar .search input {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  border: 0;
+  background-color: #E5E5E5;
+  width: 19.5rem;
+  height: 2.66667rem;
+  text-indent: 3rem;
+  font-size: 1.2rem;
+}
+/* line 59, ../sass/goodsSearch.sass */
+.myNavbar .slideDown {
+  position: relative;
+  display: inline-block;
+  font-size: 1.33333rem;
+  margin: 0.7rem 0rem 0rem 0.1rem;
+  top: 0.2rem;
+}
+/* line 65, ../sass/goodsSearch.sass */
+.myNavbar .slideDown label {
+  font-weight: 400;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 70, ../sass/goodsSearch.sass */
+section {
+  z-index: 99;
+  color: grey;
+  font-size: 1.33333rem;
+  vertical-align: middle;
+  overflow: hidden;
+}
+/* line 76, ../sass/goodsSearch.sass */
+section .glyphicon-heart {
+  top: 0.25rem;
+}
+/* line 78, ../sass/goodsSearch.sass */
+section .m-word {
+  font-size: 1.16667rem;
+  padding-left: 0.66667rem;
+}
+
+/* line 82, ../sass/goodsSearch.sass */
+article {
+  z-index: 99;
+}
+/* line 84, ../sass/goodsSearch.sass */
+article a {
+  margin: 0.33333rem 0.33333rem;
+  padding: 0.25rem 1.33333rem;
+  color: black;
+  text-decoration: none;
+  float: left;
+  box-sizing: inline-box;
+  border: 1px solid #D5D5D5;
+}
+/* line 92, ../sass/goodsSearch.sass */
+article .goods-cell {
+  height: 10rem;
+  background-color: #F8F8F8;
+  margin: 2px 0px;
+}
+/* line 96, ../sass/goodsSearch.sass */
+article .goods-cell .item-img {
+  width: 10rem;
+  height: 10rem;
+  float: left;
+}
+/* line 100, ../sass/goodsSearch.sass */
+article .goods-cell .item-img img {
+  width: 100%;
+  height: 100%;
+}
+/* line 103, ../sass/goodsSearch.sass */
+article .goods-cell .item-desc {
+  position: relative;
+  margin: 0 0 0 1rem;
+  padding: 0 0.66667rem 0 0;
+  float: left;
+  width: 15.66667rem;
+  height: 100%;
+  overflow: hidden;
+}
+/* line 112, ../sass/goodsSearch.sass */
+article .goods-cell .item-desc .p1 {
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: box;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 119, ../sass/goodsSearch.sass */
+article .goods-cell .item-desc .p2 span {
+  color: #E60012;
+}
+/* line 121, ../sass/goodsSearch.sass */
+article .goods-cell .item-desc .p3 {
+  font-size: 0.8rem;
+  color: grey;
+  box-sizing: border-box;
+  border-bottom: 1px solid #E1E1E1;
+}
+/* line 126, ../sass/goodsSearch.sass */
+article .goods-cell .item-desc p {
+  width: 100%;
+}
+/* line 129, ../sass/goodsSearch.sass */
+article .goods-cell .item-desc p span {
+  color: #EA97AA;
+  border: 1px solid #E37791;
+}
+/* line 132, ../sass/goodsSearch.sass */
+article .goods-cell .item-desc p em {
+  font-style: normal;
+  color: #C70034;
+  font-size: 1.5rem;
+}
+/* line 136, ../sass/goodsSearch.sass */
+article .goods-cell .item-desc .chart {
+  position: absolute;
+  width: 1.66667rem;
+  height: 1.66667rem;
+  background: url("../../../../../images/cyx/购物车空.png") no-repeat;
+  background-size: 70% 70%;
+  background-position: center center;
+  bottom: 1rem;
+  right: 0.5rem;
+  padding: 1.2rem;
+  border: 1px solid #E06C89;
+  border-radius: 50%;
+}
+
+/* line 150, ../sass/goodsSearch.sass */
+.cover {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 3.91667rem;
+}
+/* line 157, ../sass/goodsSearch.sass */
+.cover .searchResult {
+  padding: 0rem 1rem;
+}
+/* line 159, ../sass/goodsSearch.sass */
+.cover .searchResult a {
+  display: block;
+  padding: 1.33333rem 0rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #D5D5D5;
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 171, ../sass/goodsSearch.sass */
+.covershow {
+  z-index: 999;
+}
+
+/* line 175, ../sass/goodsSearch.sass */
+.section-padding {
+  padding: 0.5rem 1rem;
+}
+
+@media(min-width : 375px) {
+  /* line 180, ../sass/goodsSearch.sass */
+  html {
+    font-size: 14px !important;
+  }
+}
+@media(min-width : 414px) {
+  /* line 184, ../sass/goodsSearch.sass */
+  html {
+    font-size: 15.5px !important;
+  }
+}
+@media(min-width : 768px) {
+  /* line 188, ../sass/goodsSearch.sass */
+  html {
+    font-size: 18px !important;
+    width: 64%;
+    margin: 0 auto;
+  }
+}
+@media(min-width : 1024px) {
+  /* line 194, ../sass/goodsSearch.sass */
+  html {
+    font-size: 25px !important;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
