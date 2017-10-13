@@ -4,6 +4,14 @@
 	-ms-border-radius : $radius
 	border-radius : $radius
 
+//行数量的minxin
+=line-clamp($lines)
+	line-clamp : $lines
+	-webkit-line-clamp : $lines
+	-webkit-box-orient: vertical
+	display: box
+	display: -webkit-box
+
 // 兼容性代码区完毕
 
 *
@@ -114,9 +122,13 @@ html
 			width: 15.66666667rem
 			height: 100%
 			overflow : hidden
+
 			.p1
 				padding-top : 1rem
 				margin-bottom : 1.5rem
+				+line-clamp(2)
+				overflow : hidden
+				text-overflow : ellipsis
 			.p2
 				span
 					color : #E60012
@@ -143,7 +155,7 @@ html
 				background-size : 70% 70%
 				background-position : center center
 				bottom : 1rem
-				right : 1.5rem
+				right : 0.5rem
 				padding : 1.2rem
 				border : 1px solid #E06C89
 				border-radius : 50%

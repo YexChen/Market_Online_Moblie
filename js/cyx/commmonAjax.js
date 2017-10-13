@@ -20,6 +20,9 @@ window.shop = {
 		fetchGoodsTypes : function(callback){
 			$.get(shop.config.API_PREFIX+'api_cat.php', {} ,
 				callback)
+		},
+		fetchGoodsByTypes : function(catId,mPage,callback){
+			$.get(shop.config.API_PREFIX+`api_goods.php?cat_id=${catId}&page=${mPage}&pageSize=10`,{},callback);
 		}
 	}	
 }

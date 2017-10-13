@@ -1,28 +1,28 @@
 @charset "UTF-8";
-/* line 9, ../sass/goodsView.sass */
+/* line 17, ../sass/goodsView.sass */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* line 13, ../sass/goodsView.sass */
+/* line 21, ../sass/goodsView.sass */
 html {
   font-size: 12px !important;
 }
 
-/* line 16, ../sass/goodsView.sass */
+/* line 24, ../sass/goodsView.sass */
 .myNavbar {
   height: 3.91667rem;
   background-color: white;
   box-sizing: border-box;
 }
-/* line 20, ../sass/goodsView.sass */
+/* line 28, ../sass/goodsView.sass */
 .myNavbar .back {
   display: inline-block;
   width: 3.33333rem;
   height: 3.33333rem;
 }
-/* line 24, ../sass/goodsView.sass */
+/* line 32, ../sass/goodsView.sass */
 .myNavbar .back img {
   display: inline-block;
   width: 100%;
@@ -31,13 +31,13 @@ html {
   vertical-align: middle;
   padding: 0.3rem 1rem;
 }
-/* line 31, ../sass/goodsView.sass */
+/* line 39, ../sass/goodsView.sass */
 .myNavbar .search {
   position: relative;
   display: inline-block;
   padding: 0.6rem 0;
 }
-/* line 35, ../sass/goodsView.sass */
+/* line 43, ../sass/goodsView.sass */
 .myNavbar .search .glyphicon {
   font-weight: 400;
   position: absolute;
@@ -46,7 +46,7 @@ html {
   top: 1.1rem;
   left: 1rem;
 }
-/* line 42, ../sass/goodsView.sass */
+/* line 50, ../sass/goodsView.sass */
 .myNavbar .search input {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -59,7 +59,7 @@ html {
   text-indent: 2.8rem;
   font-size: 1.4rem;
 }
-/* line 50, ../sass/goodsView.sass */
+/* line 58, ../sass/goodsView.sass */
 .myNavbar .slideDown {
   position: relative;
   display: inline-block;
@@ -67,32 +67,32 @@ html {
   margin: 0.7rem 0.5rem 0rem 0.5rem;
   top: 0.2rem;
 }
-/* line 56, ../sass/goodsView.sass */
+/* line 64, ../sass/goodsView.sass */
 .myNavbar .slideDown .glyphicon {
   font-weight: 400;
   width: 100%;
   height: 100%;
 }
 
-/* line 60, ../sass/goodsView.sass */
+/* line 68, ../sass/goodsView.sass */
 .slideBy {
   height: 5rem;
   display: block;
   border-bottom: 1px solid #D5D5D5;
   box-sizing: border-box;
 }
-/* line 65, ../sass/goodsView.sass */
+/* line 73, ../sass/goodsView.sass */
 .slideBy ul {
   list-style: none;
 }
-/* line 67, ../sass/goodsView.sass */
+/* line 75, ../sass/goodsView.sass */
 .slideBy ul li {
   width: 6.66667rem;
   height: 4.5rem;
   float: left;
   text-align: center;
 }
-/* line 72, ../sass/goodsView.sass */
+/* line 80, ../sass/goodsView.sass */
 .slideBy ul li i {
   display: inline-block;
   background-image: url("../../../../../images/cyx/pepsi1.png");
@@ -102,50 +102,50 @@ html {
   height: 2rem;
   text-align: center;
 }
-/* line 80, ../sass/goodsView.sass */
+/* line 88, ../sass/goodsView.sass */
 .slideBy ul li .items-no1 {
   background-position: 0rem -1.9rem;
 }
-/* line 82, ../sass/goodsView.sass */
+/* line 90, ../sass/goodsView.sass */
 .slideBy ul li .items-no2 {
   background-position: 0rem -3.75rem;
 }
-/* line 84, ../sass/goodsView.sass */
+/* line 92, ../sass/goodsView.sass */
 .slideBy ul li .items-no3 {
   background-position: 0rem -9.5rem;
 }
-/* line 86, ../sass/goodsView.sass */
+/* line 94, ../sass/goodsView.sass */
 .slideBy ul li .items-no4 {
   background-position: 0rem -13.5rem;
 }
-/* line 88, ../sass/goodsView.sass */
+/* line 96, ../sass/goodsView.sass */
 .slideBy ul li p {
   text-align: center;
 }
 
-/* line 92, ../sass/goodsView.sass */
+/* line 100, ../sass/goodsView.sass */
 .tempBorder {
   border-bottom: 1px solid #D5D5D5;
 }
 
-/* line 98, ../sass/goodsView.sass */
+/* line 106, ../sass/goodsView.sass */
 .main-page .goods-cell {
   height: 10rem;
   background-color: #F8F8F8;
   margin: 2px 0px;
 }
-/* line 102, ../sass/goodsView.sass */
+/* line 110, ../sass/goodsView.sass */
 .main-page .goods-cell .item-img {
   width: 10rem;
   height: 10rem;
   float: left;
 }
-/* line 106, ../sass/goodsView.sass */
+/* line 114, ../sass/goodsView.sass */
 .main-page .goods-cell .item-img img {
   width: 100%;
   height: 100%;
 }
-/* line 109, ../sass/goodsView.sass */
+/* line 117, ../sass/goodsView.sass */
 .main-page .goods-cell .item-desc {
   position: relative;
   margin: 0 0 0 1rem;
@@ -155,38 +155,45 @@ html {
   height: 100%;
   overflow: hidden;
 }
-/* line 117, ../sass/goodsView.sass */
+/* line 126, ../sass/goodsView.sass */
 .main-page .goods-cell .item-desc .p1 {
   padding-top: 1rem;
   margin-bottom: 1.5rem;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: box;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-/* line 121, ../sass/goodsView.sass */
+/* line 133, ../sass/goodsView.sass */
 .main-page .goods-cell .item-desc .p2 span {
   color: #E60012;
 }
-/* line 123, ../sass/goodsView.sass */
+/* line 135, ../sass/goodsView.sass */
 .main-page .goods-cell .item-desc .p3 {
   font-size: 0.8rem;
   color: grey;
   box-sizing: border-box;
   border-bottom: 1px solid #E1E1E1;
 }
-/* line 128, ../sass/goodsView.sass */
+/* line 140, ../sass/goodsView.sass */
 .main-page .goods-cell .item-desc p {
   width: 100%;
 }
-/* line 131, ../sass/goodsView.sass */
+/* line 143, ../sass/goodsView.sass */
 .main-page .goods-cell .item-desc p span {
   color: #EA97AA;
   border: 1px solid #E37791;
 }
-/* line 134, ../sass/goodsView.sass */
+/* line 146, ../sass/goodsView.sass */
 .main-page .goods-cell .item-desc p em {
   font-style: normal;
   color: #C70034;
   font-size: 1.5rem;
 }
-/* line 138, ../sass/goodsView.sass */
+/* line 150, ../sass/goodsView.sass */
 .main-page .goods-cell .item-desc .chart {
   position: absolute;
   width: 1.66667rem;
@@ -195,12 +202,12 @@ html {
   background-size: 70% 70%;
   background-position: center center;
   bottom: 1rem;
-  right: 1.5rem;
+  right: 0.5rem;
   padding: 1.2rem;
   border: 1px solid #E06C89;
   border-radius: 50%;
 }
-/* line 150, ../sass/goodsView.sass */
+/* line 162, ../sass/goodsView.sass */
 .main-page .main-page-icon {
   background-color: white;
   position: fixed;
@@ -213,12 +220,12 @@ html {
   text-align: center;
   z-index: 99;
 }
-/* line 161, ../sass/goodsView.sass */
+/* line 173, ../sass/goodsView.sass */
 .main-page .main-page-icon img {
   width: 70%;
   height: 70%;
 }
-/* line 164, ../sass/goodsView.sass */
+/* line 176, ../sass/goodsView.sass */
 .main-page .chart {
   background-color: white;
   z-index: 99;
@@ -232,26 +239,26 @@ html {
   text-align: center;
   padding: 0.1rem 0;
 }
-/* line 176, ../sass/goodsView.sass */
+/* line 188, ../sass/goodsView.sass */
 .main-page .chart img {
   width: 70%;
   height: 70%;
 }
 
 @media(min-width : 375px) {
-  /* line 183, ../sass/goodsView.sass */
+  /* line 195, ../sass/goodsView.sass */
   html {
     font-size: 14px !important;
   }
 }
 @media(min-width : 414px) {
-  /* line 187, ../sass/goodsView.sass */
+  /* line 199, ../sass/goodsView.sass */
   html {
     font-size: 15.5px !important;
   }
 }
 @media(min-width : 768px) {
-  /* line 191, ../sass/goodsView.sass */
+  /* line 203, ../sass/goodsView.sass */
   html {
     font-size: 18px !important;
     width: 64%;
@@ -259,7 +266,7 @@ html {
   }
 }
 @media(min-width : 1024px) {
-  /* line 197, ../sass/goodsView.sass */
+  /* line 209, ../sass/goodsView.sass */
   html {
     font-size: 25px !important;
     width: 70%;
