@@ -23,6 +23,9 @@ window.shop = {
 		},
 		fetchGoodsByTypes : function(catId,mPage,callback){
 			$.get(shop.config.API_PREFIX+`api_goods.php?cat_id=${catId}&page=${mPage}&pageSize=10`,{},callback);
+		},
+		PreSearchGoods : function(goodsDesc,callback){
+			$.get(shop.config.API_PREFIX+`api_goods.php?search_text=${goodsDesc}`,{},callback);
 		}
 	}	
 }

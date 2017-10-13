@@ -4,6 +4,14 @@
 	-ms-border-radius : $radius
 	border-radius : $radius
 
+//行数量的minxin
+=line-clamp($lines)
+	line-clamp : $lines
+	-webkit-line-clamp : $lines
+	-webkit-box-orient: vertical
+	display: box
+	display: -webkit-box
+
 // 兼容性代码区完毕
 
 *
@@ -60,8 +68,8 @@ html
 			vertical-align : middle
 
 section
+	z-index : 99
 	color : grey
-	padding : 0.5rem 1rem
 	font-size : 1.3333333rem
 	vertical-align : middle
 	overflow : hidden
@@ -72,7 +80,7 @@ section
 		padding-left : 0.6666666666667rem
 
 article
-	padding : 0.5rem 1rem
+	z-index : 99
 	a
 		margin : 0.33333333333rem 0.3333333rem
 		padding : 0.25rem   1.333333333333rem
@@ -81,6 +89,91 @@ article
 		float : left
 		box-sizing : inline-box
 		border : 1px solid #D5D5D5
+	.goods-cell
+		height: 10rem
+		background-color: #F8F8F8
+		margin : 2px 0px
+		.item-img
+			width: 10rem
+			height: 10rem
+			float : left
+			img
+				width: 100%
+				height: 100%
+		.item-desc
+			position : relative
+			margin : 0 0 0 1rem
+			padding : 0 0.666666667rem 0 0
+			float : left
+			width: 15.66666667rem
+			height: 100%
+			overflow : hidden
+
+			.p1
+				padding-top : 1rem
+				margin-bottom : 1.5rem
+				+line-clamp(2)
+				overflow : hidden
+				text-overflow : ellipsis
+			.p2
+				span
+					color : #E60012
+			.p3
+				font-size : 0.8rem
+				color : grey
+				box-sizing : border-box
+				border-bottom : 1px solid #E1E1E1
+			p
+				width: 100%
+				word-break:break-all
+				span
+					color : #EA97AA
+					border : 1px solid #E37791
+				em
+					font-style : normal
+					color : #C70034
+					font-size : 1.5rem
+			.chart
+				position : absolute
+				width: 1.6666667rem
+				height: 1.666667rem
+				background : url("../../../../../images/cyx/购物车空.png") no-repeat
+				background-size : 70% 70%
+				background-position : center center
+				bottom : 1rem
+				right : 0.5rem
+				padding : 1.2rem
+				border : 1px solid #E06C89
+				border-radius : 50%
+
+
+.cover
+	z-index : -1
+	width: 100%
+	height: 100%
+	background-color : white
+	position : absolute
+	top : 3.91666667rem
+	.searchResult
+		padding : 0rem 1rem
+		a
+			display : block
+			padding : 1.333333333rem 0rem
+			box-sizing : border-box
+			border-bottom : 1px solid #D5D5D5
+			color : black
+			text-decoration : none
+			white-space : nowrap
+			text-overflow : ellipsis
+			overflow : hidden
+
+//显示遮罩层
+.covershow
+	z-index : 999	
+
+//section padding 动态的
+.section-padding
+	padding : 0.5rem 1rem
 
 // 开始媒体查询之路
 @media(min-width : 375px)
