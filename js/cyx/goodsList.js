@@ -16,9 +16,9 @@ oSlide.onclick = function(){
 
 //设置侧边栏排他效果
 let oMyListsFather = document.querySelector(".sidebar");
-let oMyLists = oMyListsFather.querySelector("ul").querySelectorAll("li");
 
-{
+function InitialSlideAni(){
+	let oMyLists = oMyListsFather.querySelector("ul").querySelectorAll("li");
 	for(let i = 0;i<oMyLists.length;i++){
 		oMyLists[i].onclick = function(){
 			for(let j = 0;j<oMyLists.length;j++){
@@ -29,6 +29,11 @@ let oMyLists = oMyListsFather.querySelector("ul").querySelectorAll("li");
 			if(!$(oMyLists[i]).hasClass("li-active")){
 				$(oMyLists[i]).addClass("li-active");
 			}
+			//这里创造一个cyx_pages,用来记录跳转前的选定页
+			if(localStorage.getItem("cyx_pages")){
+				localStorage.removeItem("cyx_pages");
+			}
+			localStorage.setItem("cyx_pages",i);
 		}
 	}
 }
@@ -54,5 +59,23 @@ oMyListsFather.addEventListener("touchmove",function(e){
 
 oMyListsFather.addEventListener("touchend",function(e){
 	oldValue = e.changedTouches[0].clientY-oMyListsFather.offsetTop-startY + oldValue;
+	//这里要加东西
 	// console.log(oldValue);
 })
+
+
+//设置当网页加载时侧边栏的选中效果
+function resetSlidebar(){
+	let oCurrentPage = localStorage.getItem("cyx_pages");
+	let oMyLists = oMyListsFather.querySelector("ul").querySelectorAll("li");
+	$(oMyLists[oCurrentPage]).addClass('li-active');
+}
+
+//当页面中cyx_pages不存在时，为它设一个初始值
+{
+	if(!localStorage.getItem("cyx_pages")){
+		localStorage.setItem("cyx_pages",0);
+	}
+}
+
+//
