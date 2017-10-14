@@ -26,7 +26,7 @@
 		for(let i=0;i<data.length;i++){
 			let oTemplate = `
 				<div class="goods-items">
-	              <a href="./goodsDetail.html?cat_id=${data[i].goods_id}">
+	              <a href="./../goods.html?goods_id=${data[i].goods_id}">
 	                <img src="${data[i].goods_thumb}">
 	                <p>${data[i].goods_name}</p>
 	              </a>
