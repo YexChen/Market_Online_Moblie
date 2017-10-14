@@ -56,7 +56,7 @@
 </body>
 	<script src="../js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		var token="ec9bd0a28993c66f8916810290e77fda"
+		var token=localStorage.token
 		var obody = document.querySelector(".order-ul")
 		$(".cart-book").on("touchstart",function () {
 			$(".order-mo").css("display","block")
@@ -147,6 +147,7 @@
 						total_prices:localStorage.total_prices
 					},function (retext) {
 						console.log(retext)
+						location.href="order-check.html"
 					})
 				}
 			}
