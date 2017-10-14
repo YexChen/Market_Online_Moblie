@@ -11,7 +11,7 @@ oSlide.onclick = function(){
 		setTimeout(function(){
 			oNav.addClass('tempBorder');
 		},500);
-	}	
+	}
 }
 
 //设置侧边栏排他效果
@@ -78,4 +78,29 @@ function resetSlidebar(){
 	}
 }
 
-//
+//动态添加跳转效果
+//定义信号变量
+	let mp = document.querySelector("#mp");
+	let gwc = document.querySelector("#gwc");
+	let wd  = document.querySelector("#wd");
+	let bk = document.querySelector("#bk");
+	let psearch = document.querySelector("#search");
+
+	psearch.onclick = function(){
+		location.href = "./goodsSearch.html";
+	}
+	bk.onclick = function(){
+		history.back();
+	}
+
+	mp.onclick = function(){
+		location.href = "./../../index.html";
+	}
+
+	gwc.onclick = function(){
+		location.href = "./../cart.html";
+	}
+
+	wd.onclick = function(){
+		location.href = "./../userpage.html";
+	}

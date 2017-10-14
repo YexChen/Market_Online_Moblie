@@ -27,6 +27,14 @@ function removePadding(){
 				<a>${arr[i]}</a>
 			`
 		}
-		
+
 	}
 )()
+
+
+//点击返回
+let bk = document.querySelector("#bk");
+
+bk.onclick = function(){
+	history.back();
+}
