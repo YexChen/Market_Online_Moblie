@@ -10,7 +10,7 @@
 	<body>
 	<script src="../js/myajax.js" charset="utf-8"></script>
 	<script>
-	    var goods_id = getQueryString('goods_id');
+	    var goods_id = getstring("goods_id");
 	    console.log(goods_id);
 	    myajax.get('http://h6.duchengjiu.top/shop/api_goods.php', {
 	      // goods_id: goods_id ES5
@@ -53,8 +53,8 @@
 		        	<li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span><p>店铺</p></a></li>
 		        	<li><a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><p>收藏</p></a></li>
 		        	<li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><p>购物车</p></a></li>
+		        	<li><button type="button" class="btn btn-default navbar-btn" id="add-to-cart">加入购物车</button></li>
 		          </ul>
-		          <button type="button" class="btn btn-default navbar-btn" id="add-to-cart">加入购物车</button>
 				</div>
 			</nav>
 	      </div>
@@ -77,6 +77,13 @@
 	        })
 	      }
 	    }
+	    function getstring (name) {
+			var search = location.search.substr(1);
+			var reg = new RegExp("(^|&)"+name+"=([^&]*)($|&)");
+			var a=search.match(reg);
+			console.log(a)
+			return a[2];
+		}
 	</script>
 	</body>
 </html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/userpage.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/animate.css"/>
+	</head>
+	<body>
+		<div class="outbox">
+			<div class="my-logo">
+				<p class="my-top">
+					<a href="#" class="message animated tada infinite">
+						<i class="icon-message "></i>
+					</a>
+					<a href="链接我们的首页">
+						<i class="icon-home"></i>
+					</a>
+				</p>
+				<div class="content">
+					<img src="../images/img/defaulthead.jpg"/>
+					<div class="person">
+							<div class="membername">
+								<p class="btn-login">
+									<span><a href="deluye">登录</a></span>
+									<span>|</span>
+									<span><a href="zhuceye">注册</a></span>
+								</p>
+								<p ><span class="name" id="username" ></p>
+								</span>
+							</div>
+						<div class="identify">
+							<div class="vip-login">
+								<img src="../images/img/icon_t0.png"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<ul class="h_list">
+						<li><span>0</span>商品收藏</li>
+						<li><span>0</span>店铺收藏</li>
+						<li><span><em class="foot-logo"></em></span>我的足迹</li>
+						<li><span><em class="write-logo"></em></span>签到领积分</li>
+					</ul>
+				</div>	
+			</div>
+			<div class="my-part">
+				<h3 class="order">
+					<a>我的订单
+						<span>查看全部订单<b>></b></span>
+					</a>	
+				</h3>
+				<ul class="order-box">
+					<li class="animated flipInX "><i class="pay"></i><span>待付款</span></li>
+					<li class="animated flipInX "><i class="delivery"></i><span>待发货</span></li>
+					<li class="animated flipInX "><i class="goods"></i><span>待收货</span></li>
+					<li class="animated flipInX "><i class="comment"></i><span>带评论</span></li>
+					<li class="animated flipInX "><i class="return-goods"></i><span>退货</span></li>
+				</ul>
+			</div>
+			<div class="my-part">
+				<h3 class="order">我的资产</h3>
+				<ul class="order-box">
+					<li class="animated rotateIn "><i class="pay-out "></i><span>账户余额</span></li>
+					<li class="animated rotateIn " ><i class="delivery-ka"></i><span>购物卡</span></li>
+					<li class="animated rotateIn "><i class="goods-quan"></i><span>优惠券</span></li>
+					<li class="animated rotateIn "><i class="comment-fen"></i><span>积分</span></li>
+					<li class="animated rotateIn "><i class="return-goods_zhi"></i><span>卡券充值</span></li>
+				</ul>
+			</div>
+			<div class="my-part my_count">
+				<ul class="my_message">
+					<li class="animated zoomIn "><p><a href="message.html"><img src="../images/img/icon_personal.png"/></a></p><a href="message.html">个人信息</a><span><a href="message.html">收货地址管理</a></span></li>
+					<li class="animated zoomIn "><p><img src="../images/img/icon_buy.png"/></p>曾经购买</li>
+					<li class="animated zoomIn "><p><img src="../images/img/icon_member.png"/></p>积分商城</li>
+					<li class="animated zoomIn "><p><img src="../images/img/icon_help.png"/></p>帮助中心</li>
+					<li class="animated zoomIn "><p><img src="../images/img/icon_feedback.png"/></p>意见反馈</li>
+				</ul>
+			</div>
+		</div>
+			<div class=" footer-box">
+					<p class="v-pages">
+						<a href="链接我们的首页" class="cur">触屏版</a>
+						<a href="#">电脑版</a>
+						<a id="btn_out" class="btn btn-primary btn-lg logo" data-toggle="modal" data-target="#myModal">退出</a>
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h4 class="modal-title" id="myModalLabel">提示</h4>
+				      </div>
+				      <div class="modal-body">
+				        	确定退出当前账户吗？
+				      </div>
+				      
+				      	<ul class="modal-footer " id="modal-footer">
+				      		<li  class="btn btn-default" data-dismiss="modal">取消</button>
+				        	<li  class="btn btn-primary">确定</li>
+				      	</ul>
+				     	</div>
+				    </div>
+				  </div>
+					</p>
+					<p class="copy-right">
+						Copyright © 2013-2016 飞牛网,ALL Rights Reserved.
+						<br>沪ICP备13025776号 营业执照
+					</p>
+			</div>
+	</body>
+	<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var obtn=document.getElementsByClassName("btn-primary")[1];
+		var obtn_out=document.getElementById("btn_out");
+		console.log(obtn_out);
+		console.log($("#btn_out"));
+		console.log($(".membername p "));
+		obtn.addEventListener("touchstart",function(){
+//			location.href="userpage.html";
+			
+			$("#btn_out").remove();
+			$("#myModal").hide();
+			$(".modal-backdrop.in").css({"opacity":0});
+			$(".modal-open ").css({"overflow":"visible"});
+			$(".membername .btn-login ").show();
+			$(".membername p").eq(1).hide();
+		},false)
+		$("#username").html(localStorage.username);
+	</script>
+</html>

@@ -1,4 +1,4 @@
-# Market_Online_Moblie
+﻿# Market_Online_Moblie
 移动端商城项目
 ====
 		组员：秦凯华 郭诚 刘新明 陈颖轩 朱城刚 李洁
@@ -36,12 +36,12 @@ http://m.feiniu.com/?ref=pc2h5%7Cmk_Baidu_KW
 要做的页面
 ----
 		1.主页 (秦凯华)
-		2.总分类页面 （陈颖轩）
-		3.分分类页面  （陈颖轩）
-		3.5 搜索页面（陈颖轩）
+		2.总分类页面 （陈颖轩）cyx/goodsList.html
+		3.分分类页面  （陈颖轩）cyx/goodsView.html
+		3.5 搜索页面（陈颖轩）cyx/goodsSearch.html
 		4.商品详情页面  （刘新明）（加猜你喜欢之类的）goods.html和goods2.html
-		5.注册页 （朱城刚）
-		6.登陆页  （朱城刚）
+		5.注册页 （朱城刚）register.html
+		6.登陆页  （朱城刚）login.html
 		7.购物车页面  （郭诚）
 		8.地址页面  （郭诚）
 		9.支付页面	（郭诚）
