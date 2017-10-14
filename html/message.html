@@ -16,10 +16,10 @@
 			</div>
 			<div class="top-nav" >
 				<ul>
-					<li><a href="首页"><em style="background-position: 0 -0.45rem;background-size: cover;"></em><br>首页</a></li>
-					<li><a href="首页"><em style="background-position: 0 -1.35rem;background-size: cover;"></em><br>商品分类</a></li>
-					<li><a href="首页"><em style="background-position: 0 -2.27rem;background-size: cover;"></em><br>购物车</a></li>
-					<li><a href="首页"><em style="background-position: 0 -3.2rem;background-size: cover;"></em><br>我的账户</a></li>
+					<li><a href="index.html"><em style="background-position: 0 -0.45rem;background-size: cover;"></em><br>首页</a></li>
+					<li><a href="goodsView.html"><em style="background-position: 0 -1.35rem;background-size: cover;"></em><br>商品分类</a></li>
+					<li><a href="cart.html"><em style="background-position: 0 -2.27rem;background-size: cover;"></em><br>购物车</a></li>
+					<li><a href="#"><em style="background-position: 0 -3.2rem;background-size: cover;"></em><br>我的账户</a></li>
 				</ul>
 			</div>
 			<ul class="infot_t">
@@ -32,9 +32,9 @@
 				<li>增票地址管理<span class="glyphicon glyphicon-menu-right"></span></li>
 			</ul>
 			<ul class="infot_t">
-				<li><a href="链接首页">绑定手机</a><span class="glyphicon glyphicon-menu-right"></span ><span class="news"></span></li>
-				<li><a href="链接首页">登录密码</a><span class="glyphicon glyphicon-menu-right"></span ><span class="news">修改登录密码</span></li>
-				<li><a href="链接首页">支付密码</a><span class="glyphicon glyphicon-menu-right"></span><span class="news">设置支付密码</span></li>
+				<li><a href="#">绑定手机</a><span class="glyphicon glyphicon-menu-right"></span ><span class="news"></span></li>
+				<li><a href="#">登录密码</a><span class="glyphicon glyphicon-menu-right"></span ><span class="news">修改登录密码</span></li>
+				<li><a href="#">支付密码</a><span class="glyphicon glyphicon-menu-right"></span><span class="news">设置支付密码</span></li>
 			</ul>
 			<div class="go_to">
 				<a href="" class="btn btn-primary btn-lg logo" data-toggle="modal" data-target="#myModal">退出当前用户</a>
@@ -86,7 +86,7 @@
 		obtn.addEventListener("touchstart",function(){
 			$("#myModal").hide();
 			$(".modal-backdrop.in").css({"opacity":0,"z-index":-999});
-			location.href="登录页面"
+			location.href="login.html"
 		},false)
 		$(".username span").html(localStorage.username);
 	</script>

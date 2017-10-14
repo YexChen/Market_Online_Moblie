@@ -11,6 +11,7 @@
 /*回到顶部*/
 .backTop {
 	z-index: 999;
+	display: none;
 	position: fixed;
 	width: 32px;
 	height: 32px;
