@@ -51,4 +51,5 @@ http://m.feiniu.com/?ref=pc2h5%7Cmk_Baidu_KW
 		13.其他的再添加
 关于token
 ----
-		token保存在localstorage里面
+		token保存在localstorage里面   
+		localstorage.token 为用户登录或注册所保存的token值
