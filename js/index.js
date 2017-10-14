@@ -301,7 +301,7 @@ var skgoods = function () {
 		for (var i = 0; i < data.length; i++) {
 			var obj = data[i];
 			str += 
-			`<li><a href='html/goods.html?goods_id=${obj.goods_id}'>
+			`<li><a href='html/goods.html?goods_id=${obj.goods_id}' title='${obj.goods_desc}'>
 				<img src='${obj.goods_thumb}'/></a>
 				<p>${obj.goods_name}</p>
 				<p class='now_price'>¥<span>${obj.price}</span></p>
@@ -318,8 +318,8 @@ var hotgoods = function () {
 	function getContent (page) {
 		$.get('http://h6.duchengjiu.top/shop/api_goods.php', {page, pagesize}, function (json){
 			var template = `<li class='w_p50'>
-					<a href="html/goods.html?goods_id= '<%= goods_id %>' " >
-						<img src=<%= goods_thumb %> alt='<%= goods_desc %>' />
+					<a href="html/goods.html?goods_id=<%= goods_id %>" title=<%= goods_desc %> >
+						<img src=<%= goods_thumb %> />
 					</a>
 					<p class='goodsname'><%= goods_name %></p>
 					<div>
@@ -352,6 +352,10 @@ var hotgoods = function () {
 		var	rate = $(document).scrollTop() / $(document).height();
 		if (rate > .7 && page < 5) {
 			lock = false;
+			$('.backTop').css('display','block');
+			$('.backTop').on('click', function () {
+				$(this).css('display', 'none');
+			});
 			getContent(++page);
 			setTimeout(function (){
 				lock=true;
