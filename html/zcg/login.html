@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         
+		<title>手机验证登录</title>
+		<link rel="stylesheet" href="../../css/login.css" />
+		
+	</head>
+	
+	<body>
+		<div class="outbox">
+			
+			<div class="topbox">
+				<div class="topbox1"><img src="../../images/login1.png"></div>
+				<div class="topbox2"><h1>飞牛账号密码登录</h1></div>
+				<span class="right"><a href="register.html">立即注册</a></span>
+			</div>
+			
+			
+			
+			<ul>
+				<form action="" name="forma" onsubmit="return doValidate()">  
+				<li><em id="em2">账号：</em><input class="one" type="text" maxlength="11" name="phoneNum" id="phoneNum" placeholder="请输入您的账号"><br /></li>
+				<li><em>密码：</em><input class="two" type="password" name="password" placeholder="请输入密码" ><br /></li>
+			     </form>
+			</ul>
+			</div>
+			<div class="footbox"><button type="submit" value="提交">登 录</button></div>
+			<div class="footbox1"><span>注册/登录代表您已同意《<a href="#">飞牛网服务协议</a>》</span></div>
+
+		
+			<div class="foot"><span class="foot1">其他方式登录</span></div>
+			
+		  <div class="foot2">	<img class="img1" src="../../images/register1.png"></div>
+			
+			
+		<script type="text/javascript" src="../../js/login.js" ></script>
+		<script src="../../js/myajax.js" charset="utf-8"></script>
+			<script>
+	var oUsername = document.querySelector('input[name=phoneNum]');
+    var oPassword = document.querySelector('input[name=password]');
+    var oBtn = document.querySelector('button[type=submit]');
+    oBtn.onclick = function() {
+      //js校验
+      //直接调用登录的接口
+      myajax.post('http://h6.duchengjiu.top/shop/api_user.php',
+      {
+        status: 'login',
+        username: oUsername.value,
+        password: oPassword.value,
+      }, function(error, responseText){
+        var json = JSON.parse(responseText);
+        console.log(json);
+ 	   
+      });
+    }
+
+	    </script>
+	</body>
+</html>

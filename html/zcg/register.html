@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../../css/register.css" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>注册</title>
+	</head>
+	<body>  
+		   
+			<div class="register_topbox">
+				<div class="register_topbox1"><img src="../../images/login1.png"></div>
+				<div class="register_topbox2"><h1>注册</h1></div>
+			
+			</div>
+		<div class="register_middle">		
+			<ul>
+		        <li><em id="em1">手&nbsp;&nbsp;机&nbsp;号：</em><input class="one" type="text" maxlength="11" name="phoneNum" placeholder="请输入您的手机号"></li>
+				<li><em>密 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</em><input class="two" type="password" name="password" placeholder="请输入密码"></li>
+				<li><em>确认密码：</em><input class="four" type="password" class="hot1" name="passwords" placeholder="确认密码"><li>
+			</ul>
+		</div>
+		<div class="register_footbox"><button type="submit" value="注册">注 册</button></div>
+		<div class="register_footbox1"><span>注册/登录代表您已同意《<a href="#">飞牛网服务协议</a>》</span></div>
+		<script src="../../js/myajax.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/login.js" ></script>
+			<script>
+			var oUsername = document.querySelector('input[name=phoneNum]');
+			var oPassword = document.querySelector('input[name=password]');
+			var oSubimit = document.querySelector('button[type=submit]');
+			var oPasswords = document.querySelector('input[type=opsswords]'); 
+			oSubimit.onclick = function(){
+				myajax.post('http://h6.duchengjiu.top/shop/api_user.php',
+			
+			
+			{
+				status:'register',
+				username:oUsername.value,
+				password:oPassword.value,
+				
+			},function(err,responseText){
+				var json = JSON.parse(responseText);
+				console.log(json);
+				 localStorage.token = json.data.token;
+        localStorage.username = json.data.username;
+        console.log(localStorage.token);
+        console.log(localStorage.username);
+            if (localStorage.backurl) {
+            	
+          location.href = localStorage.backurl;
+        } else {
+        	
+          location.href = 'login.html';
+        }
+			});
+			}
+		 
+        </script>
+	</body>
+</html>
