@@ -11,7 +11,7 @@ oSlide.onclick = function(){
 		setTimeout(function(){
 			oNav.addClass('tempBorder');
 		},500);
-	}	
+	}
 }
 
 //设置侧边栏排他效果
