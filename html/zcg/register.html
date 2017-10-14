@@ -41,24 +41,24 @@
 			},function(err,responseText){
 				var json = JSON.parse(responseText);
 				console.log(json);
-				//这里删掉旧的
+				//如果json报错的话，就弹出错误
+				if(json.code!=0){
+					alert(json.message);
+					return;
+				}
+				//现在成功了
+				let data = json.data;
+				//这里删掉旧的token,username
 				if(localStorage.token)
 					localStorage.removeItem("token");
 				if(localStorage.username)
 					localStorage.removeItem("username");
 				//这里写入token,和username
-		 	  localStorage.token=json.data.token
-		 	   localStorage.username=json.data.username;
-		 	   history.back();
-        console.log(localStorage.token);
-        console.log(localStorage.username);
-            if (localStorage.backurl) {
+		 	  localStorage.token=data[3];
+		 	  localStorage.username=data[0];
+				// 跳回页面，先注释
+				  history.back();
 
-          location.href = localStorage.backurl;
-        } else {
-
-          location.href = './login.html';
-        }
 			});
 			}
 
