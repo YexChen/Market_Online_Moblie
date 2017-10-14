@@ -38,4 +38,3 @@ function getUrl(){
 	let result = url.match(reg);
 	return result?result[2]:null;
 }
-

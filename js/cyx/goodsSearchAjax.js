@@ -1,6 +1,6 @@
 //搜索页面
 //需要做什么呢？
-//搜索功能（废话） 从api中获取东西 
+//搜索功能（废话） 从api中获取东西
 //预搜索功能：在搜索框内容改变时提示搜索内容 PreSearchGoods
 //保存搜索记录 localStorage.searchHistory (数组)
 
@@ -21,7 +21,7 @@ mInput.oninput = function(){
 			aLock = true;
 		},50);
 		let data = response.data;
-		let aUrl = "./goodsShow?goods_id="
+		let aUrl = "./../goods.html?goods_id="
 		//先清空cover里面内容
 		oCover.innerHTML = "";
 		for(let i = 0;i<data.length;i++){
@@ -73,6 +73,13 @@ mSearch.onclick = function(){
 			        </div>
 			      </div>
 			`
+		}
+		//还需要搞个超链接
+		let mGoodsCell = document.querySelectorAll(".goods-cell");
+		for(let i = 0;i<data.length;i++){
+			mGoodsCell[i].onclick = function(){
+				location.href = "./../goods.html?goods_id=${data[i].goods_id}"
+			}
 		}
 		//添加到搜索记录
 		for(let i = 0;i<searchedGoods.length;i++){

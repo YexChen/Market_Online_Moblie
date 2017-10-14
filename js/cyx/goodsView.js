@@ -11,7 +11,7 @@ oSlide.onclick = function(){
 		setTimeout(function(){
 			oNav.addClass('tempBorder');
 		},500);
-	}	
+	}
 }
 
 
@@ -24,6 +24,8 @@ let oCatId = getUrl()?getUrl():45;
 //这里在页面初始化时加载一次Ajax数据
 {
 	RequestGoods(oCatId,currentPage);
+	// 这里添加链接
+	addLink();
 }
 
 //当拉到页面90%地方的时候，执行懒加载
@@ -42,5 +44,36 @@ window.onscroll = function(e){
 			mLock = true;
 		},500);
 		RequestGoods(oCatId,currentPage++);
+	}
+}
+
+
+//动态添加跳转效果
+//定义信号变量
+function addLink(){
+	let mp = document.querySelector("#mp");
+	let gwc = document.querySelector("#gwc");
+	let wd  = document.querySelector("#wd");
+	let bk = document.querySelector("#bk");
+	let psearch = document.querySelector("#search");
+
+	psearch.onclick = function(){
+		location.href = "./goodsSearch.html";
+	}
+
+	bk.onclick = function(){
+		history.back();
+	}
+
+	mp.onclick = function(){
+		location.href = "./../../index.html";
+	}
+
+	gwc.onclick = function(){
+		location.href = "./../cart.html";
+	}
+
+	wd.onclick = function(){
+		location.href = "./../userpage.html";
 	}
 }
