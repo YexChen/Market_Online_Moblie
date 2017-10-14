@@ -14,7 +14,9 @@ window.onload = function () {
 	fontMove();
 	//获取商品分类类名
 	getcats();
+	//获取热门商品前十作为秒杀区域产品
 	skgoods();
+	//获取热门商品为品牌热卖商品
 	hotgoods();
 }
 
@@ -290,7 +292,7 @@ var getcats = function () {
 		}
 	});
 }
-
+/*秒杀商品*/
 var skgoods = function () {
 	var pagesize = 10;
 	$.get('http://h6.duchengjiu.top/shop/api_goods.php', {pagesize: pagesize}, function (json) {
@@ -299,44 +301,62 @@ var skgoods = function () {
 		for (var i = 0; i < data.length; i++) {
 			var obj = data[i];
 			str += 
-			`<li><a href='detail.html?goods_id=${obj.goods_id}'>
+			`<li><a href='goods.html?goods_id=${obj.goods_id}'>
 				<img src='${obj.goods_thumb}'/></a>
 				<p>${obj.goods_name}</p>
 				<p class='now_price'>¥<span>${obj.price}</span></p>
-				<p class='old_price'>¥1000</p>
+				<p class='old_price'>¥5000</p>
 			</li>`;
 		}
 		$('.sk_product').html(str + '<span><a href="#">查看更多</a></span>');
 	});
 }
-//<li class="w_p50">
-//	<a href="#">
-//		<img src="images/pro02.jpg" alt="" />
-//	</a>
-//	<p class="now_price">¥<span>10.00</span></p>
-//	<p class="old_price">¥100.00</p>
-//	<a href="#" class="cart"><img src="images/cart.png"/></a>
-//</li>
+/*品牌热卖*/
 var hotgoods = function () {
+	var page = 1;
 	var pagesize = 20;
-	$.get('http://h6.duchengjiu.top/shop/api_goods.php', {pagesize: pagesize}, function (json) {
-		var data = json.data;
-		var str = '';
-		for (var i = 0; i < data.length; i++) {
-			var obj = data[i];
-			str += 
-			`<li class='w_p50'>
-				<a href='detail.html?goods_id=${obj.goods_id}'>
-					<img src='${obj.goods_thumb}' alt='${obj.goods_desc}'/>
-				</a>
-				<p class='goodsname'>${obj.goods_name}</p>
-				<div>
-					<p class='now_price'>¥<span>${obj.price}</span></p>
-					<p class='old_price'>¥1000</p>
-					<a href="cart.html?goods_id=${obj.goods_id}" class="cart"><img src="images/mycart.png"/></a>
-				</div>
-			</li>`;
+	function getContent (page) {
+		$.get('http://h6.duchengjiu.top/shop/api_goods.php', {page, pagesize}, function (json){
+			var template = `<li class='w_p50'>
+					<a href="goods.html?goods_id= "<%= goods_id %>'" >
+						<img src=<%= goods_thumb %> alt='<%= goods_desc %>' />
+					</a>
+					<p class='goodsname'><%= goods_name %></p>
+					<div>
+						<p class='now_price'>¥<span><%=price %></span></p>
+						<p class='old_price'>¥5000</p>
+						<a href="cart.html?goods_id=<%= goods_id %>" class="cart"><img src="images/mycart.png"/></a>
+					</div>
+				</li>`;
+			var compile = _.template(template);
+			for (var i = 0; i < json.data.length; i++) {
+				var data = json.data[i];
+				$('#hotgoods').html($('#hotgoods').html() + compile(data));
+			}
+//			$('#hotgoods').html($('#hotgoods').html() + `<div id='loading'>正在加载...</div>`);
+			lock = true;
+			if (page>=5) {
+				$('#hotgoods').html($('#hotgoods').html() + `<div class='load'>
+					<p class='line01'></p><img src='images/niuniu.png' />
+					<p class='line02'></p><span>暂时没有更多了!</span></div>`);
+				lock = false;
+			}
+//			$('#loading').remove();
+		});
+	}
+	getContent();
+	//懒加载
+	var lock = true;
+	$(window).scroll(function () {
+		if (!lock) return;
+		var	rate = $(document).scrollTop() / $(document).height();
+		if (rate > .7 && page < 5) {
+			lock = false;
+			getContent(++page);
+			setTimeout(function (){
+				lock=true;
+			},2000);
 		}
-		$('#hotgoods').html(str);
 	});
 }
+
