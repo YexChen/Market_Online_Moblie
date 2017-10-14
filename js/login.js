@@ -13,5 +13,3 @@
                 return false;
             }
         }
-  localStorage.username="15273216227";
-  localStorage.token="f193d9f67791a0b4f6b44424b01275e9";
