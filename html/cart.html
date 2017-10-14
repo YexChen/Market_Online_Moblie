@@ -66,7 +66,7 @@
 	}
 </script>
 <script type="text/javascript">
-	var token="ec9bd0a28993c66f8916810290e77fda";
+	var token=localStorage.token;
 	var oul = document.querySelector(".cart-ul")
 	$.get("http://h6.duchengjiu.top/shop/api_cart.php?token="+token,{},function (retext) {
 		console.log(retext);

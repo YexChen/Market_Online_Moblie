@@ -5,10 +5,10 @@ target 目标值，默认为0，回到顶部
 animatetime 动画时间，默认为1000
 */
 function backtotop(id, scrolltop, target, animatetime) {
-  id         = id;
-  scrolltop  = 200 ;
-  target     = target;
-  animatetime = animatetime;
+  id         = id || '#backtotop';
+  scrolltop  = 200 || 00;
+  target     = target || 0;
+  animatetime = animatetime || 1000;
 
   var oBack = document.querySelector(id);
   window.onscroll = function(){

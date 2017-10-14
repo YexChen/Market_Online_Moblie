@@ -107,9 +107,10 @@ ul li {
 .bot-box li{
 	width: 55px;
 	height: 24px;
-	margin-top: 16px;
+	margin-top: 4px;
 	float: left;
 	display: block;
+	justify-content: space-between;
 	font-size: large;
 	margin-bottom: 5px;
 }
@@ -118,11 +119,24 @@ ul li {
 	padding-left: 3px;
 }
 .btn {
-	padding: 14px 24px;
+	padding: 9px 11px;
 	background-color: red;
 }
 .btn:hover {
 	border: none;
-	padding: 14px 24px;
+	padding: 9px 11px;
 	background-color: red;
+}
+body {
+	height: 1000px;
+}
+.backtotop {
+  	position: fixed;
+  	right: 20px;
+  	bottom: 30px;
+  	padding: 5px 5px;
+ 	color: #888888;
+  	border: 1px solid yellowgreen;
+	border-radius: 30%;
+ 	display: none;
 }

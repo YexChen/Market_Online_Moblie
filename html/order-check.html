@@ -15,6 +15,9 @@
 			</div>
 		</div>
 		<h1>查看订单</h1>
+		<span class="cart-book">
+			首页
+		</span>
 	</div>
 	<div class="check-li">
 		
@@ -22,7 +25,7 @@
 </body>
 <script src="../js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-	var token ="ec9bd0a28993c66f8916810290e77fda"
+	var token =localStorage.token;
 	$.get("http://h6.duchengjiu.top/shop/api_order.php?token="+token,{},function (retext){
 		console.log(retext)
 		var data = retext.data
@@ -67,5 +70,10 @@
 	 {
 	 window.history.back();
 	 }
+</script>
+<script type="text/javascript">
+	$(".cart-book").on("touchstart",function () {
+		location.href="index.html"
+	})
 </script>
 </html>

@@ -6,14 +6,13 @@
 		<title>详情</title>
 		<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
 		<link rel="stylesheet" href="../css/goods.css" />
-		<link rel="stylesheet" href="../css/backtotop.css" />
 	</head>
 	<body>
 	<script src="../js/myajax.js" charset="utf-8"></script>
 	<script type="text/javascript" src="../js/backtotop.js" ></script>
 	
 	<script>
-	    var goods_id = getQueryString('goods_id');
+	    var goods_id = getstring("goods_id");
 	    console.log(goods_id);
 	    myajax.get('http://h6.duchengjiu.top/shop/api_goods.php', {
 	      // goods_id: goods_id ES5
@@ -66,6 +65,13 @@
 	        })
 	      }
 	    }
+	    function getstring (name) {
+			var search = location.search.substr(1);
+			var reg = new RegExp("(^|&)"+name+"=([^&]*)($|&)");
+			var a=search.match(reg);
+			console.log(a)
+			return a[2];
+		}
 	</script>
 	</body>
 </html>
