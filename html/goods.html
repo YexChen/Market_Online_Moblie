@@ -59,8 +59,9 @@
 			</nav>
 	      </div>
 	      `;
+				bindBack();
 	    });
-	
+
 	    document.body.onclick = function(event) {
 	      event = event || window.event;
 	      var target = event.target || event.srcElement;
@@ -83,6 +84,13 @@
 			var a=search.match(reg);
 			console.log(a)
 			return a[2];
+		}
+		//做返回效果--by陈颖轩
+		function bindBack(){
+			let headBack = document.querySelector(".top-back");
+			headBack.onclick = function(){
+				history.back();
+			}
 		}
 	</script>
 	</body>
