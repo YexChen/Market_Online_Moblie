@@ -19,12 +19,13 @@
 	padding : 0
 
 html
-	font-size : 12px !important
+	font-size : 12px 
 
 .myNavbar
 	height: 3.91666667rem
 	background-color : white
 	box-sizing : border-box
+	border-bottom : 1px solid #D5D5D5
 	.back
 		display : inline-block
 		width: 3.3333333333rem
@@ -53,56 +54,41 @@ html
 			background-color : #E5E5E5
 			width: 19.5rem
 			height: 2.6666666667rem
-			text-indent : 2.8rem
-			font-size : 1.4rem
+			text-indent : 3rem
+			font-size : 1.2rem
 	.slideDown
 		position : relative
 		display : inline-block
-		font-size : 1.666666rem
-		margin : 0.7rem 0.5rem 0rem 0.5rem
+		font-size : 1.33333333rem
+		margin : 0.7rem 0rem 0rem 0.1rem
 		top : 0.2rem
-		.glyphicon
-			font-weight : 400
-			width: 100%
-			height: 100%
-.slideBy
-	height: 5rem
-	display : block
-	border-bottom : 1px solid #D5D5D5
-	box-sizing : border-box
-	ul
-		list-style : none
-		li
-			width: 6.6666666667rem
-			height: 4.5rem
-			float : left
-			text-align : center
-			i
-				display : inline-block
-				background-image : url("../../../../../images/cyx/pepsi1.png")
-				background-repeat : no-repeat
-				background-size : cover
-				width: 2rem
-				height: 2rem
-				text-align : center
-			.items-no1
-				background-position : 0rem -1.9rem
-			.items-no2
-				background-position : 0rem -3.75rem
-			.items-no3
-				background-position : 0rem -9.5rem
-			.items-no4
-				background-position : 0rem -13.5rem
-			p
-				text-align : center
+		label
+			font-weight : 400 
+			display : inline-block
+			vertical-align : middle
 
-//临时类名，为了加个边框
-.tempBorder
-	border-bottom : 1px solid #D5D5D5
+section
+	z-index : 99
+	color : grey
+	font-size : 1.3333333rem
+	vertical-align : middle
+	overflow : hidden
+	.glyphicon-heart
+		top : 0.25rem
+	.m-word
+		font-size : 1.166666666667rem
+		padding-left : 0.6666666666667rem
 
-
-.main-page
-	position :relative
+article
+	z-index : 99
+	a
+		margin : 0.33333333333rem 0.3333333rem
+		padding : 0.25rem   1.333333333333rem
+		color : black
+		text-decoration : none
+		float : left
+		box-sizing : inline-box
+		border : 1px solid #D5D5D5
 	.goods-cell
 		height: 10rem
 		background-color: #F8F8F8
@@ -159,36 +145,35 @@ html
 				padding : 1.2rem
 				border : 1px solid #E06C89
 				border-radius : 50%
-	.main-page-icon
-		background-color : white
-		position : fixed
-		width: 2.5rem
-		height: 2.5rem
-		border : 1px solid #CECECE
-		border-radius : 50%
-		bottom : 5rem
-		right : 1.5rem
-		text-align : center
-		z-index : 99
-		img
-			width: 70%
-			height: 70%
-	.chart
-		background-color : white
-		z-index : 99
-		position : fixed
-		width: 2.5rem
-		height: 2.5rem
-		border : 1px solid #CECECE
-		border-radius : 50%
-		bottom : 1.8rem
-		right : 1.5rem
-		text-align : center
-		padding : 0.1rem 0 
-		img
-			width: 70%
-			height: 70%
 
+
+.cover
+	z-index : -1
+	width: 100%
+	height: 100%
+	background-color : white
+	position : absolute
+	top : 3.91666667rem
+	.searchResult
+		padding : 0rem 1rem
+		a
+			display : block
+			padding : 1.333333333rem 0rem
+			box-sizing : border-box
+			border-bottom : 1px solid #D5D5D5
+			color : black
+			text-decoration : none
+			white-space : nowrap
+			text-overflow : ellipsis
+			overflow : hidden
+
+//显示遮罩层
+.covershow
+	z-index : 999	
+
+//section padding 动态的
+.section-padding
+	padding : 0.5rem 1rem
 
 // 开始媒体查询之路
 @media(min-width : 375px)

@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="cart-top">
-		<div class="cart-return">
+		<div class="cart-return" onclick="f1()">
 			<div class="cart-tou">
 					
 			</div>
@@ -154,5 +154,9 @@
 	</script>
 	<script type="text/javascript">
 		$(".order-foot i")[0].innerHTML=localStorage.total_prices
+		function f1()
+ {
+ window.history.back();
+ }
 	</script>
 </html>

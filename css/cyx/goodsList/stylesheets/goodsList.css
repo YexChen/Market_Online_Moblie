@@ -141,42 +141,66 @@ html {
   width: 5.64167rem;
   height: 8.41667rem;
   float: left;
+  margin-right: 0.1rem;
 }
-/* line 112, ../sass/goodsList.sass */
+/* line 113, ../sass/goodsList.sass */
 .my-artical .goods-items-group .goods-items a:hover {
   text-decoration: none;
 }
-/* line 114, ../sass/goodsList.sass */
+/* line 115, ../sass/goodsList.sass */
 .my-artical .goods-items-group .goods-items img {
   width: 5.64167rem;
   height: 5.64167rem;
 }
-/* line 117, ../sass/goodsList.sass */
+/* line 118, ../sass/goodsList.sass */
 .my-artical .goods-items-group .goods-items p {
   text-align: center;
   color: black;
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 125, ../sass/goodsList.sass */
+.my-artical .goods-items-group .m-more {
+  color: #D7063B;
+  line-height: 0.2rem;
+  text-align: center;
+  margin: 0 auto;
+  width: 9rem;
+  height: 1rem;
+  background-color: white;
+  left: 50%;
+}
+/* line 134, ../sass/goodsList.sass */
+.my-artical .goods-items-group .m-more a {
+  display: inline-block;
+  top: 100px;
+  padding: 1.234rem 2rem;
+  left: -50%;
+  border: 1px solid #D5D5D5;
+  border-radius: 10px;
 }
 
-/* line 123, ../sass/goodsList.sass */
+/* line 142, ../sass/goodsList.sass */
 .slideBy {
   height: 5rem;
   display: block;
   border-bottom: 1px solid #D5D5D5;
   box-sizing: border-box;
 }
-/* line 128, ../sass/goodsList.sass */
+/* line 147, ../sass/goodsList.sass */
 .slideBy ul {
   list-style: none;
 }
-/* line 130, ../sass/goodsList.sass */
+/* line 149, ../sass/goodsList.sass */
 .slideBy ul li {
   width: 6.66667rem;
   height: 4.5rem;
   float: left;
   text-align: center;
 }
-/* line 135, ../sass/goodsList.sass */
+/* line 154, ../sass/goodsList.sass */
 .slideBy ul li i {
   display: inline-block;
   background-image: url("../../../../../images/cyx/pepsi1.png");
@@ -186,46 +210,46 @@ html {
   height: 2rem;
   text-align: center;
 }
-/* line 143, ../sass/goodsList.sass */
+/* line 162, ../sass/goodsList.sass */
 .slideBy ul li .items-no1 {
   background-position: 0rem -1.9rem;
 }
-/* line 145, ../sass/goodsList.sass */
+/* line 164, ../sass/goodsList.sass */
 .slideBy ul li .items-no2 {
   background-position: 0rem -3.75rem;
 }
-/* line 147, ../sass/goodsList.sass */
+/* line 166, ../sass/goodsList.sass */
 .slideBy ul li .items-no3 {
   background-position: 0rem -9.5rem;
 }
-/* line 149, ../sass/goodsList.sass */
+/* line 168, ../sass/goodsList.sass */
 .slideBy ul li .items-no4 {
   background-position: 0rem -13.5rem;
 }
-/* line 151, ../sass/goodsList.sass */
+/* line 170, ../sass/goodsList.sass */
 .slideBy ul li p {
   text-align: center;
 }
 
-/* line 155, ../sass/goodsList.sass */
+/* line 174, ../sass/goodsList.sass */
 .tempBorder {
   border-bottom: 1px solid #D5D5D5;
 }
 
 @media(min-width : 375px) {
-  /* line 161, ../sass/goodsList.sass */
+  /* line 180, ../sass/goodsList.sass */
   html {
     font-size: 14px !important;
   }
 }
 @media(min-width : 414px) {
-  /* line 165, ../sass/goodsList.sass */
+  /* line 184, ../sass/goodsList.sass */
   html {
     font-size: 15.5px !important;
   }
 }
 @media(min-width : 768px) {
-  /* line 169, ../sass/goodsList.sass */
+  /* line 188, ../sass/goodsList.sass */
   html {
     font-size: 18px !important;
     width: 64%;
@@ -233,7 +257,7 @@ html {
   }
 }
 @media(min-width : 1024px) {
-  /* line 175, ../sass/goodsList.sass */
+  /* line 194, ../sass/goodsList.sass */
   html {
     font-size: 25px !important;
     width: 70%;

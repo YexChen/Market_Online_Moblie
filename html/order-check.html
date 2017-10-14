@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" type="text/css" href="../css/order-check.css"/>
+	<title>Document</title>
+</head>
+<body>
+	<div class="cart-top">
+		<div class="cart-return" onclick="f1()">
+			<div class="cart-tou">
+					
+			</div>
+		</div>
+		<h1>查看订单</h1>
+	</div>
+	<div class="check-li">
+		
+	</div>
+</body>
+<script src="../js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var token ="ec9bd0a28993c66f8916810290e77fda"
+	$.get("http://h6.duchengjiu.top/shop/api_order.php?token="+token,{},function (retext){
+		console.log(retext)
+		var data = retext.data
+		var ocheck = document.querySelector(".check-li")
+		console.log(ocheck)
+		for (i=0;i<data.length;i++) {
+			ocheck.innerHTML+=`
+			<div class="check-name">
+			<div class="check-name-left">
+				${data[i].consignee}
+			</div>
+			<div class="check-name-right">
+				交易成功
+			</div>
+		</div>
+		<div class="check-b">
+
+		</div>
+		<div class="check-foot">
+			<em>${data[i].total_prices}</em><i>总价:¥</i>
+		</div>
+			`
+		}
+		var ogoods = document.querySelectorAll(".check-b")
+		for (i=0;i<ogoods.length;i++) {
+			for (j=0;j<data[i].goods_list.length;j++) {
+				ogoods[i].innerHTML+=`
+				<div class="check-goods">
+				<img src="${data[i].goods_list[j].goods_thumb}"/>
+				<div class="check-goods-n">
+				<p>${data[i].goods_list[j].goods_name}</p>
+				<i>¥</i><em>${data[i].goods_list[j].goods_price}</em>
+				</div>
+				</div>
+				`
+			}
+		}
+	})
+</script>
+<script type="text/javascript">
+	function f1()
+	 {
+	 window.history.back();
+	 }
+</script>
+</html>
