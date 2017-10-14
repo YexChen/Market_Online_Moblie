@@ -301,7 +301,7 @@ var skgoods = function () {
 		for (var i = 0; i < data.length; i++) {
 			var obj = data[i];
 			str += 
-			`<li><a href='goods.html?goods_id=${obj.goods_id}'>
+			`<li><a href='html/goods.html?goods_id=${obj.goods_id}'>
 				<img src='${obj.goods_thumb}'/></a>
 				<p>${obj.goods_name}</p>
 				<p class='now_price'>¥<span>${obj.price}</span></p>
@@ -318,14 +318,14 @@ var hotgoods = function () {
 	function getContent (page) {
 		$.get('http://h6.duchengjiu.top/shop/api_goods.php', {page, pagesize}, function (json){
 			var template = `<li class='w_p50'>
-					<a href="goods.html?goods_id= "<%= goods_id %>'" >
+					<a href="html/goods.html?goods_id= '<%= goods_id %>' " >
 						<img src=<%= goods_thumb %> alt='<%= goods_desc %>' />
 					</a>
 					<p class='goodsname'><%= goods_name %></p>
 					<div>
 						<p class='now_price'>¥<span><%=price %></span></p>
 						<p class='old_price'>¥5000</p>
-						<a href="cart.html?goods_id=<%= goods_id %>" class="cart"><img src="images/mycart.png"/></a>
+						<a href="html/cart.html?goods_id=<%= goods_id %>" class="cart"><img src="images/mycart.png"/></a>
 					</div>
 				</li>`;
 			var compile = _.template(template);
