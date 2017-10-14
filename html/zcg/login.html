@@ -52,11 +52,14 @@
         password: oPassword.value,
       }, function(error, responseText){
         var json = JSON.parse(responseText);
-        console.log(json);
- 	   
+        var data = json.data;
+ 	  localStorage.token=responseText.data.token
+ 	   localStorage.username=responseText.data.username;
+ 	   location.href="index.html"
+
       });
     }
-
+      
 	    </script>
 	</body>
 </html>
