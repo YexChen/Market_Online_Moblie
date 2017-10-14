@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/message.css"/>
+	</head>
+	<body>
+		<div class="out-box">
+			<div class="top-box">
+				<a  href="userpage.html"   class="glyphicon glyphicon-menu-left top-back"></a>
+				<h1>个人信息</h1>
+				<span class="glyphicon glyphicon-list nav-right" id="nav-right"></span>
+			</div>
+			<div class="top-nav" >
+				<ul>
+					<li><a href="首页"><em style="background-position: 0 -0.45rem;background-size: cover;"></em><br>首页</a></li>
+					<li><a href="首页"><em style="background-position: 0 -1.35rem;background-size: cover;"></em><br>商品分类</a></li>
+					<li><a href="首页"><em style="background-position: 0 -2.27rem;background-size: cover;"></em><br>购物车</a></li>
+					<li><a href="首页"><em style="background-position: 0 -3.2rem;background-size: cover;"></em><br>我的账户</a></li>
+				</ul>
+			</div>
+			<ul class="infot_t">
+				<li class="username">用户名<span class="news" ></span></li>
+				<li>昵称<span class="glyphicon glyphicon-menu-right"></span></li>
+				<li>性别<span class="glyphicon glyphicon-menu-right"></span></li>
+			</ul>
+			<ul class="infot_t">
+				<li>收货地址管理<span class="glyphicon glyphicon-menu-right"></span></li>
+				<li>增票地址管理<span class="glyphicon glyphicon-menu-right"></span></li>
+			</ul>
+			<ul class="infot_t">
+				<li><a href="链接首页">绑定手机</a><span class="glyphicon glyphicon-menu-right"></span ><span class="news"></span></li>
+				<li><a href="链接首页">登录密码</a><span class="glyphicon glyphicon-menu-right"></span ><span class="news">修改登录密码</span></li>
+				<li><a href="链接首页">支付密码</a><span class="glyphicon glyphicon-menu-right"></span><span class="news">设置支付密码</span></li>
+			</ul>
+			<div class="go_to">
+				<a href="" class="btn btn-primary btn-lg logo" data-toggle="modal" data-target="#myModal">退出当前用户</a>
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h4 class="modal-title" id="myModalLabel">提示</h4>
+				      </div>
+				      <div class="modal-body">
+				        	确定退出当前账户吗？
+				      </div>
+				      
+				      	<ul class="modal-footer " id="modal-footer">
+				      		<li  class="btn btn-default" data-dismiss="modal">取消</button>
+				        	<li  class="btn btn-primary">确定</li>
+				      	</ul>
+				        
+			 
+    	</div>
+  </div>
+</div>
+			</div>
+		</div>
+	</body>
+	<script  type="text/javascript" charset="utf-8" src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		$(".nav-right").click(function(){
+//			$(".top-nav").toggle();
+////			})
+			var onavright=document.getElementById("nav-right");
+			console.log(onavright);
+			
+		onavright.addEventListener("touchstart",function(){
+			$(".top-nav").toggle();
+		},false)
+	</script>
+	<script type="text/javascript">
+//		$(".logo").click(function(){
+//			modal();
+//		})
+//			$("#modal-footer .btn").eq(1).click(function(){
+//				console.log(1);
+//				location.href="message.html"
+//			})
+		var obtn=document.getElementsByClassName("btn-primary")[1];
+		obtn.addEventListener("touchstart",function(){
+			$("#myModal").hide();
+			$(".modal-backdrop.in").css({"opacity":0,"z-index":-999});
+			location.href="登录页面"
+		},false)
+		$(".username span").html(localStorage.username);
+	</script>
+</html>
