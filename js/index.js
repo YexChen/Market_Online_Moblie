@@ -18,6 +18,8 @@ window.onload = function () {
 	skgoods();
 	//获取热门商品为品牌热卖商品
 	hotgoods();
+	//验证登陆
+	validateLogin()
 }
 
 /*搜索框颜色变化*/
@@ -55,7 +57,7 @@ var banner = function () {
 		imageBox.style.transform = 'translateX('+ translateX +'px)';
 		imageBox.style.webkitTransform = 'translateX('+ translateX +'px)';
 	}
-	
+
 	var index = 1;
 	var timer = setInterval(function () {
 		index ++;
@@ -99,7 +101,7 @@ var banner = function () {
 		if (isMove) {
 			if (Math.abs(distanceX) < width/3) {
 				addTransition();
-				setTranslateX(-index * width);				
+				setTranslateX(-index * width);
 			} else{
 				if (distanceX > 0) {
 					index --;
@@ -140,7 +142,7 @@ var proBanner = function () {
 		imageBox.style.transform = 'translateX('+ translateX +'px)';
 		imageBox.style.webkitTransform = 'translateX('+ translateX +'px)';
 	}
-	
+
 	var index = 1;
 	var timer = setInterval(function () {
 		index ++;
@@ -184,7 +186,7 @@ var proBanner = function () {
 		if (isMove) {
 			if (Math.abs(distanceX) < width/3) {
 				addTransition();
-				setTranslateX(-index * width);				
+				setTranslateX(-index * width);
 			} else{
 				if (distanceX > 0) {
 					index --;
@@ -220,10 +222,10 @@ var downTime = function () {
 		//设置时间
 		spans[0].innerHTML = Math.floor(h / 10);
 		spans[1].innerHTML = h%10;
-		
+
 		spans[3].innerHTML = Math.floor(m / 10);
 		spans[4].innerHTML = m%10;
-		
+
 		spans[6].innerHTML = Math.floor(s / 10);
 		spans[7].innerHTML = s%10;
 		if (time <= 0) {
@@ -300,7 +302,7 @@ var skgoods = function () {
 		var str = '';
 		for (var i = 0; i < data.length; i++) {
 			var obj = data[i];
-			str += 
+			str +=
 			`<li><a href='html/goods.html?goods_id=${obj.goods_id}' title='${obj.goods_desc}'>
 				<img src='${obj.goods_thumb}'/></a>
 				<p>${obj.goods_name}</p>
@@ -364,3 +366,40 @@ var hotgoods = function () {
 	});
 }
 
+
+//搜索栏滚动？？？
+{
+	let oEms = document.querySelector(".em-group").querySelectorAll("em");
+	for(let ctemp = 0;ctemp<oEms.length;ctemp++){
+		oEms[ctemp].style.top = 30*ctemp + 10 + "px" ;
+	}
+}
+
+let moveTop = 0;
+function moveEms(){
+	let eGgroups = document.querySelector(".em-group");
+	if(moveTop<-150){
+		moveTop = 0
+		$(eGgroups).css("top","0px");
+	}
+	$(eGgroups).animate({"top" : `${moveTop}px`},"slow");
+	moveTop -=30;
+	console.log($(eGgroups).css("top"));
+}
+setInterval(function(){
+	moveEms();
+},2000)
+
+
+//做登陆之后把登陆换成图片
+//哎，还要做跳转的变化，真麻烦
+//我还没刷副本呢
+function validateLogin(){
+	if(!localStorage.token)
+		return;
+	else {
+		$(".login").html("");
+		$(".login").addClass('glyphicon glyphicon-user');
+		$(".login").attr("href","html/userpage.html");
+	}
+}

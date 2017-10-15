@@ -31,6 +31,7 @@
 }
 
 .fn_search {
+	overflow: hidden;
 	position: fixed;
 	/*left: 0;
 	top: 0;*/
@@ -384,8 +385,8 @@
 	text-align: center;
 	margin: 0 auto;
 	overflow: hidden;
-	white-space:nowrap; 
-	text-overflow:ellipsis; 
+	white-space:nowrap;
+	text-overflow:ellipsis;
 	-o-text-overflow:ellipsis;
 }
 .sk_product li .now_price {
@@ -620,4 +621,28 @@ footer ul li a p {
 }
 .b_bottom{
 	border-bottom: 1px solid #ddd;
+}
+
+/*这里是顶部搜索栏滚动代码*/
+.addOnFather{
+	overflow: hidden;
+}
+
+.addOnFather2{
+	overflow: hidden;
+}
+
+.em-group>em{
+	position : absolute;
+	font-style : normal;
+	top : 10px;
+	left : 30px;
+	color : silver;
+}
+
+.em-group{
+	width: 200px;
+	height: 30px;
+	position : absolute;
+	top : 0;
 }
