@@ -23,13 +23,24 @@ function RequestGoods(catId,mPage){
 	    				<p class = "p1"><span>自营</span>${data[i].goods_name}</p>
 	    				<p class = "p2"><em >￥${data[i].price}</em>&nbsp;&nbsp;<span>限时特惠</span></p>
 	    				<p class = "p3">好评${Math.trunc(Math.random()*100)}%&nbsp;&nbsp;评价${data[i].goods_id}条</p>
-	    				<em class = "chart"></em>
+	    				<em class = "charts" data-goodsid = ${data[i].goods_id}></em>
 	    			</div>
 	    		</div>
 			`
 		}
 	})
 }
+
+//现在做点击购物车按钮来添加商品的功能
+//点击购物按钮，获取该元素的data-goodsid,然后发一个post请求
+//number 默认为1，然后token从localStorage里面拿
+//搞完以后再goodsView.js里面添加视觉效果
+//post请求起什么名字呢？addToChart()
+//请求函数名为addToMyChart
+function addToMyChart(){
+
+}
+
 
 //这是一个截取url的函数
 function getUrl(){

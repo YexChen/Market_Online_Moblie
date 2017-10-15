@@ -85,6 +85,7 @@ function resetSlidebar(){
 	let wd  = document.querySelector("#wd");
 	let bk = document.querySelector("#bk");
 	let psearch = document.querySelector("#search");
+	console.log(12345);
 
 	psearch.onclick = function(){
 		location.href = "./goodsSearch.html";
@@ -96,6 +97,7 @@ function resetSlidebar(){
 	mp.onclick = function(){
 		location.href = "./../../index.html";
 	}
+
 
 	gwc.onclick = function(){
 		location.href = "./../cart.html";

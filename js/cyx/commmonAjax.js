@@ -26,9 +26,11 @@ window.shop = {
 		},
 		PreSearchGoods : function(goodsDesc,callback){
 			$.get(shop.config.API_PREFIX+`api_goods.php?search_text=${goodsDesc}`,{},callback);
+		},
+		addToChart : function(goodsId,number,token,callback){
+			$.post(shop.config.API_PREFIX+`api_cart.php?token=${token}`,{goods_id:goodsId,number : number}, callback);
 		}
-	}	
+	}
 }
 
 //获取商品种类
-	

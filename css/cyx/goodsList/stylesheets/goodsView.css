@@ -194,7 +194,7 @@ html {
   font-size: 1.5rem;
 }
 /* line 150, ../sass/goodsView.sass */
-.main-page .goods-cell .item-desc .chart {
+.main-page .goods-cell .item-desc .charts {
   position: absolute;
   width: 1.66667rem;
   height: 1.66667rem;
@@ -220,12 +220,13 @@ html {
   text-align: center;
   z-index: 99;
 }
-/* line 173, ../sass/goodsView.sass */
-.main-page .main-page-icon img {
+/* line 174, ../sass/goodsView.sass */
+.main-page .main-page-icon a img {
+  position: relative;
   width: 70%;
   height: 70%;
 }
-/* line 176, ../sass/goodsView.sass */
+/* line 178, ../sass/goodsView.sass */
 .main-page .chart {
   background-color: white;
   z-index: 99;
@@ -239,26 +240,26 @@ html {
   text-align: center;
   padding: 0.1rem 0;
 }
-/* line 188, ../sass/goodsView.sass */
+/* line 190, ../sass/goodsView.sass */
 .main-page .chart img {
   width: 70%;
   height: 70%;
 }
 
 @media(min-width : 375px) {
-  /* line 195, ../sass/goodsView.sass */
+  /* line 197, ../sass/goodsView.sass */
   html {
     font-size: 14px !important;
   }
 }
 @media(min-width : 414px) {
-  /* line 199, ../sass/goodsView.sass */
+  /* line 201, ../sass/goodsView.sass */
   html {
     font-size: 15.5px !important;
   }
 }
 @media(min-width : 768px) {
-  /* line 203, ../sass/goodsView.sass */
+  /* line 205, ../sass/goodsView.sass */
   html {
     font-size: 18px !important;
     width: 64%;
@@ -266,7 +267,7 @@ html {
   }
 }
 @media(min-width : 1024px) {
-  /* line 209, ../sass/goodsView.sass */
+  /* line 211, ../sass/goodsView.sass */
   html {
     font-size: 25px !important;
     width: 70%;

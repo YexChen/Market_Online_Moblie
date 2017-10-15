@@ -26,6 +26,10 @@ let oCatId = getUrl()?getUrl():45;
 	RequestGoods(oCatId,currentPage);
 	// 这里添加链接
 	addLink();
+	// 绑定购物车图标点击事件，临时加一个延迟事件
+	setTimeout(function(){
+		bindAddToChart();
+	},200)
 }
 
 //当拉到页面90%地方的时候，执行懒加载
@@ -37,13 +41,16 @@ window.onscroll = function(e){
 	let scrollHeight = $(document).scrollTop()+$(window).height();
 	let totalHeight = $(document).height();
 	let rate = scrollHeight/totalHeight;
-	console.log(rate);
 	if(rate > 0.93&&mLock){
 		mLock = false;
 		setTimeout(function(){
 			mLock = true;
 		},500);
 		RequestGoods(oCatId,currentPage++);
+		// 绑定购物车图标点击事件，临时加一个延迟事件
+		setTimeout(function(){
+			bindAddToChart();
+		},200);
 	}
 }
 
@@ -77,3 +84,18 @@ function addLink(){
 		location.href = "./../userpage.html";
 	}
 }
+
+
+//在点击添加至购物车按钮时触发goodsViewAjax里面的函数，添加至购物车
+//以下是绑定点击事件的函数
+function bindAddToChart(){
+	let allChartIcons = document.querySelectorAll(".charts");
+	for(let i = 0;i<allChartIcons.length;i++){
+		console.log(allChartIcons);
+		allChartIcons[i].onclick = function(){
+			console.log(12345);
+		}
+	}
+}
+
+//以下是视觉特效（函数）？
