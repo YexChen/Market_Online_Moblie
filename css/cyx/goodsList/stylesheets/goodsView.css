@@ -7,7 +7,7 @@
 
 /* line 21, ../sass/goodsView.sass */
 html {
-  font-size: 12px !important;
+  font-size: 12px;
 }
 
 /* line 24, ../sass/goodsView.sass */
@@ -249,19 +249,19 @@ html {
 @media(min-width : 375px) {
   /* line 197, ../sass/goodsView.sass */
   html {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 }
 @media(min-width : 414px) {
   /* line 201, ../sass/goodsView.sass */
   html {
-    font-size: 15.5px !important;
+    font-size: 15.5px;
   }
 }
 @media(min-width : 768px) {
   /* line 205, ../sass/goodsView.sass */
   html {
-    font-size: 18px !important;
+    font-size: 18px;
     width: 64%;
     margin: 0 auto;
   }
@@ -269,7 +269,7 @@ html {
 @media(min-width : 1024px) {
   /* line 211, ../sass/goodsView.sass */
   html {
-    font-size: 25px !important;
+    font-size: 25px;
     width: 70%;
     margin: 0 auto;
   }

@@ -226,19 +226,19 @@ article .goods-cell .item-desc .chart {
 @media(min-width : 375px) {
   /* line 180, ../sass/goodsSearch.sass */
   html {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 }
 @media(min-width : 414px) {
   /* line 184, ../sass/goodsSearch.sass */
   html {
-    font-size: 15.5px !important;
+    font-size: 15.5px;
   }
 }
 @media(min-width : 768px) {
   /* line 188, ../sass/goodsSearch.sass */
   html {
-    font-size: 18px !important;
+    font-size: 18px;
     width: 64%;
     margin: 0 auto;
   }
@@ -246,7 +246,7 @@ article .goods-cell .item-desc .chart {
 @media(min-width : 1024px) {
   /* line 194, ../sass/goodsSearch.sass */
   html {
-    font-size: 25px !important;
+    font-size: 25px;
     width: 70%;
     margin: 0 auto;
   }

@@ -93,7 +93,7 @@ function bindAddToChart(){
 	for(let i = 0;i<allChartIcons.length;i++){
 		console.log(allChartIcons);
 		allChartIcons[i].onclick = function(){
-			\pp
+			location.href = `../goods.html?goods_id=${allChartIcons[i].dataset.goodsid}`;
 		}
 	}
 }

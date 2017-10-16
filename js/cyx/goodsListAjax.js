@@ -33,7 +33,7 @@
 	            </div>`;
 	        goodsGroup.innerHTML += oTemplate;
         }
-        goodsGroup.innerHTML += `<div class = "m-more"><a href="./goodsView?cat_id=${catId}" >更多商品</a></div>`;
+        goodsGroup.innerHTML += `<div class = "m-more"><a href="./goodsView.html?cat_id=${catId}" >更多商品</a></div>`;
         //这里再添加一个按钮
 	});
 }

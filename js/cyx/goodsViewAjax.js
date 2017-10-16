@@ -15,11 +15,11 @@ function RequestGoods(catId,mPage){
 		//添加到dom
 		for(let i = 0;i<data.length;i++){
 			oMainPage.innerHTML += `
-				<div class="goods-cell">
+				<div class="goods-cell" data-goodsid = ${data[i].goods_id}>
 	    			<div class="item-img">
 	    				<img src="${data[i].goods_thumb}">
 	    			</div>
-	    			<div class="item-desc">
+	    			<div class="item-desc" >
 	    				<p class = "p1"><span>自营</span>${data[i].goods_name}</p>
 	    				<p class = "p2"><em >￥${data[i].price}</em>&nbsp;&nbsp;<span>限时特惠</span></p>
 	    				<p class = "p3">好评${Math.trunc(Math.random()*100)}%&nbsp;&nbsp;评价${data[i].goods_id}条</p>
